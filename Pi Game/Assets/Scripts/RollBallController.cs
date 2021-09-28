@@ -5,21 +5,23 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class RollBallController : MonoBehaviour {
 
-    [SerializeField] float speed = 1f;
+    [SerializeField] float torque = 250f;
 
     Vector3 moveDir;
+    CameraController cam;
     Rigidbody rb;
 
     void Awake() {
         rb = GetComponent<Rigidbody>();
+        cam = FindObjectOfType<CameraController>();
     }
 
     void FixedUpdate() {
-        float hor = Input.GetAxis("Horizontal");
+        float hor = -Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
 
-        moveDir = new Vector3(hor, 0, ver).normalized;
+        moveDir = ((hor * cam.forward) + (ver * cam.right)).normalized;
 
-        rb.AddTorque(moveDir * speed * Time.deltaTime);
+        rb.AddTorque(moveDir * torque * Time.deltaTime);
     }
 }
