@@ -26,7 +26,7 @@ public class RollBallController : MonoBehaviour {
         
         if (CheckGrounded()) {
             Debug.Log("grounded");
-            if (Input.GetKey(KeyCode.Space)) {
+            if (Input.GetKeyDown(KeyCode.Space)) {
                 rb.AddForce(Vector3.up * jumpForce);
             }
         }
@@ -38,8 +38,7 @@ public class RollBallController : MonoBehaviour {
 
     bool CheckGrounded() {
         RaycastHit hit;
-        float distanceToTheGround = GetComponent<Collider>().bounds.extents.y;
-        return Physics.SphereCast(transform.position, 0.49f, Vector3.down, out hit, distanceToTheGround + 0.1f, whatIsGround);
+        return Physics.SphereCast(transform.position, 0.49f, Vector3.down, out hit,  0.02f, whatIsGround);
         //return Physics.Raycast(transform.position, Vector3.down, distanceToTheGround + 0.1f, whatIsGround);
     }
 }
