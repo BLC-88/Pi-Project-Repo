@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hamster : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class Hamster : MonoBehaviour {
+
+    [SerializeField] Transform ball;
+
+    void Start() {
+        if (ball == null) {
+            ball = transform.parent.transform;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         
     }
 }
