@@ -33,7 +33,7 @@ public class RollBallController : MonoBehaviour {
         if (CheckGrounded()) {
             isGrounded = true;
             if (Input.GetKeyDown(KeyCode.Space)) {
-                rb.AddForce(Vector3.up * jumpForce); 
+                rb.AddForce(Vector3.up * jumpForce);
                 isJumping = true;
             }
         }

@@ -31,34 +31,37 @@ public class Hamster : MonoBehaviour {
     }
 
     void LateUpdate() {
-        startRot = transform.rotation;
 
         transform.position = lastPos;
 
         transform.position = Vector3.Lerp(transform.position, endPos, fallSpeed * Time.deltaTime);
-
+        /*
         float yPos = Mathf.Clamp(transform.localPosition.y, 0f, 0.5f);
         transform.localPosition = new Vector3(transform.localPosition.x, yPos, transform.localPosition.z);
-
+        */
         lastPos = transform.position;
 
         if (ball.transform.localPosition != endPos && ball.transform.localPosition != pendingPos) {
-            StartCoroutine(SetTargetPosition(ball.transform.localPosition));
+            //StartCoroutine(SetTargetPosition(ball.transform.localPosition));
+            endPos = ball.transform.localPosition;
         }
-
-
-        if (transform.localPosition.y < 0) {
-            Debug.Log("below zero");
-        }
-
-        Vector3 ballPos = ball.transform.position;
-        transform.position = new Vector3(ballPos.x, transform.position.y, ballPos.z);
-
         
+        Vector3 ballPos = ball.transform.position;
+
+        float yPos = Mathf.Clamp(transform.position.y, ballPos.y, ballPos.y + 0.4f);
+        transform.position = new Vector3(ballPos.x, yPos, ballPos.z);
+
+
         /*
         lastPos = ball.transform.position;
         endPos = Vector3.zero;
         */
+
+
+
+
+        startRot = transform.rotation;
+
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
 
@@ -68,18 +71,7 @@ public class Hamster : MonoBehaviour {
             lookRot = Quaternion.LookRotation(moveDir, Vector3.up);
         }
         endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0);
-        /*
-        if (ball.isJumping) {
-            endPos.y = 0.3f;
-        }
-        endPos.y += Physics.gravity.y * Time.deltaTime;
-        endPos.y = Mathf.Clamp(endPos.y, 0f, 1f);*/
-        /*
-        if (!ball.isGrounded) {
-            endPos.y = 0.3f;
-        }*/
 
-        //transform.position = Vector3.Lerp(transform.position, endPos, fallSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Slerp(startRot, endRot, rotateSpeed * Time.deltaTime);
     }
 }
