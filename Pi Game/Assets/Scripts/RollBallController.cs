@@ -8,6 +8,8 @@ public class RollBallController : MonoBehaviour {
     [SerializeField] float torque = 250f;
     [SerializeField] float jumpForce = 250f;
     [SerializeField] LayerMask whatIsGround;
+    [HideInInspector] public bool isGrounded;
+    [HideInInspector] public bool isJumping;
 
     Vector3 moveDir;
     CameraController cam;
@@ -29,9 +31,15 @@ public class RollBallController : MonoBehaviour {
         moveDir = ((hor * cam.forward) + (ver * cam.right)).normalized;
         
         if (CheckGrounded()) {
+            isGrounded = true;
             if (Input.GetKeyDown(KeyCode.Space)) {
-                rb.AddForce(Vector3.up * jumpForce);
+                rb.AddForce(Vector3.up * jumpForce); 
+                isJumping = true;
             }
+        }
+        else {
+            isGrounded = false;
+            isJumping = false;
         }
     }
 
