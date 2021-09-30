@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class Cat : MonoBehaviour {
 
     [SerializeField] GameObject target;
 
     NavMeshAgent agent;
+
+    void Awake() {
+        agent = GetComponent<NavMeshAgent>();
+    }
 
     void Start() {
         if (target == null) {

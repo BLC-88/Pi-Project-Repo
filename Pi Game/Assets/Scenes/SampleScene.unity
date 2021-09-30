@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentRadius: 0.3
+    agentHeight: 0.4
+    agentSlope: 50
+    agentClimb: 0.3
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.1
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -254,7 +254,7 @@ Transform:
   m_Children:
   - {fileID: 440902528}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &151532111
 GameObject:
@@ -303,7 +303,7 @@ Transform:
   m_Children:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &257822484
 GameObject:
@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 584420543}
   - component: {fileID: 584420545}
   - component: {fileID: 584420544}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leg (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1105,7 +1105,7 @@ GameObject:
   - component: {fileID: 866195506}
   - component: {fileID: 866195508}
   - component: {fileID: 866195507}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: 938461209}
   - component: {fileID: 938461211}
   - component: {fileID: 938461210}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1674,7 +1674,7 @@ GameObject:
   - component: {fileID: 1270939453}
   - component: {fileID: 1270939455}
   - component: {fileID: 1270939454}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1755,7 +1755,7 @@ GameObject:
   - component: {fileID: 1326773705}
   - component: {fileID: 1326773707}
   - component: {fileID: 1326773706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leg (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1836,7 +1836,8 @@ GameObject:
   - component: {fileID: 1498151930}
   - component: {fileID: 1498151929}
   - component: {fileID: 1498151928}
-  m_Layer: 0
+  - component: {fileID: 1498151931}
+  m_Layer: 8
   m_Name: Cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1853,7 +1854,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.3
-  m_Speed: 0.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1862,7 +1863,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.4
-  m_BaseOffset: 0.5
+  m_BaseOffset: 0.45
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!135 &1498151929
@@ -1899,8 +1900,21 @@ Transform:
   - {fileID: 1578478598}
   - {fileID: 1667549609}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1498151931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498151927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e83edcf6c9ce5904583beff494c217a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &1578478597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,7 +1926,7 @@ GameObject:
   - component: {fileID: 1578478598}
   - component: {fileID: 1578478600}
   - component: {fileID: 1578478599}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1993,7 +2007,7 @@ GameObject:
   - component: {fileID: 1592125478}
   - component: {fileID: 1592125480}
   - component: {fileID: 1592125479}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leg (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2652,6 +2666,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1649364255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1649364257}
+  - component: {fileID: 1649364256}
+  m_Layer: 0
+  m_Name: NavMeshSurface
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1649364256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649364255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 55
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.1
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 23800000, guid: b53f8da046c3cdc429a7f040f81db04c, type: 2}
+--- !u!4 &1649364257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649364255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1667549608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,7 +2737,7 @@ GameObject:
   - component: {fileID: 1667549609}
   - component: {fileID: 1667549611}
   - component: {fileID: 1667549610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ear (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2944,7 +3018,7 @@ GameObject:
   - component: {fileID: 2109369458}
   - component: {fileID: 2109369460}
   - component: {fileID: 2109369459}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
