@@ -45,9 +45,9 @@ public class Hamster : MonoBehaviour {
         endPos.y = Mathf.Clamp(endPos.y, 0f, 1f);*/
         if (!ball.isGrounded) {
             endPos.y = ball.transform.position.y;
-            transform.localPosition = Vector3.Lerp(transform.localPosition, endPos, fallSpeed * Time.deltaTime);
         }
 
+        //transform.position = Vector3.Lerp(transform.position, startPos, fallSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Slerp(startRot, endRot, rotateSpeed * Time.deltaTime);
     }
 }
