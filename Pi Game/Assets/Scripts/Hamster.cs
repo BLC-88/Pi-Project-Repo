@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StabalizeRotation : MonoBehaviour {
+public class Hamster : MonoBehaviour {
 
     [SerializeField] float rotateSpeed = 1f;
 
