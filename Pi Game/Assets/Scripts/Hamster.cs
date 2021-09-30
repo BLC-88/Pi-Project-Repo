@@ -70,9 +70,12 @@ public class Hamster : MonoBehaviour {
         if (moveDir != Vector3.zero) {
             lookRot = Quaternion.LookRotation(moveDir, Vector3.up);
         }
-        endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
         if (ball.isGrounded) {
-            transform.rotation = Quaternion.Slerp(startRot, endRot, rotateSpeed * Time.deltaTime);
+            endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
         }
+        else {
+            endRot = Quaternion.Euler(-24f, lookRot.eulerAngles.y, 0f);
+        }
+        transform.rotation = Quaternion.Slerp(startRot, endRot, rotateSpeed * Time.deltaTime);
     }
 }
