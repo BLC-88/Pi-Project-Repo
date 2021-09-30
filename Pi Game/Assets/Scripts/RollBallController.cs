@@ -18,6 +18,10 @@ public class RollBallController : MonoBehaviour {
         cam = FindObjectOfType<CameraController>();
     }
 
+    void Start() {
+        rb.maxAngularVelocity = 100;
+    }
+
     void Update() {
         float hor = -Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
@@ -37,6 +41,6 @@ public class RollBallController : MonoBehaviour {
 
     bool CheckGrounded() {
         RaycastHit hit;
-        return Physics.SphereCast(transform.position, 0.49f, Vector3.down, out hit,  0.02f, whatIsGround);
+        return Physics.SphereCast(transform.position, 0.14f, Vector3.down, out hit,  0.02f, whatIsGround);
     }
 }
