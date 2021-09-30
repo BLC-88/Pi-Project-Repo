@@ -10,8 +10,9 @@ public class Hamster : MonoBehaviour {
     Vector3 moveDir;
     Quaternion lookRot;
 
-    Vector3 startPos;
-    public Vector3 endPos;
+    Vector3 pendingPos;
+    public Vector3 lastPos;
+    Vector3 endPos;
     Quaternion startRot;
     Quaternion endRot;
 
@@ -21,13 +22,43 @@ public class Hamster : MonoBehaviour {
     void Awake() {
         cam = FindObjectOfType<CameraController>();
         ball = FindObjectOfType<RollBallController>();
-        endPos = transform.localPosition;
     }
 
-    void Update() {
-        startRot = transform.rotation;
-        startPos = ball.transform.position;
+    IEnumerator SetTargetPosition(Vector3 position) {
+        pendingPos = position;
+        yield return null;
+        endPos = position;
+    }
 
+    void LateUpdate() {
+        startRot = transform.rotation;
+
+        transform.position = lastPos;
+
+        transform.position = Vector3.Lerp(transform.position, endPos, fallSpeed * Time.deltaTime);
+
+        float yPos = Mathf.Clamp(transform.localPosition.y, 0f, 0.5f);
+        transform.localPosition = new Vector3(transform.localPosition.x, yPos, transform.localPosition.z);
+
+        lastPos = transform.position;
+
+        if (ball.transform.localPosition != endPos && ball.transform.localPosition != pendingPos) {
+            StartCoroutine(SetTargetPosition(ball.transform.localPosition));
+        }
+
+
+        if (transform.localPosition.y < 0) {
+            Debug.Log("below zero");
+        }
+
+        Vector3 ballPos = ball.transform.position;
+        transform.position = new Vector3(ballPos.x, transform.position.y, ballPos.z);
+
+        
+        /*
+        lastPos = ball.transform.position;
+        endPos = Vector3.zero;
+        */
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
 
@@ -43,11 +74,12 @@ public class Hamster : MonoBehaviour {
         }
         endPos.y += Physics.gravity.y * Time.deltaTime;
         endPos.y = Mathf.Clamp(endPos.y, 0f, 1f);*/
+        /*
         if (!ball.isGrounded) {
-            endPos.y = ball.transform.position.y;
-        }
+            endPos.y = 0.3f;
+        }*/
 
-        //transform.position = Vector3.Lerp(transform.position, startPos, fallSpeed * Time.deltaTime);
+        //transform.position = Vector3.Lerp(transform.position, endPos, fallSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Slerp(startRot, endRot, rotateSpeed * Time.deltaTime);
     }
 }

@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour {
         target = FindObjectOfType<RollBallController>().gameObject;
     }
 
-    void Update() {
+    void LateUpdate() {
         startPos = transform.position;
         endPos = target.transform.position;
         currentLerpTime += Time.deltaTime;

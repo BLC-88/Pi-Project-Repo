@@ -431,8 +431,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 12
-  fallSpeed: 10
-  endPos: {x: 0, y: 0, z: 0}
+  fallSpeed: 30
+  lastPos: {x: 0, y: 0, z: 0}
 --- !u!1 &456758170
 GameObject:
   m_ObjectHideFlags: 0
