@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 257822488}
   - component: {fileID: 257822487}
   m_Layer: 6
-  m_Name: Sphere (1)
+  m_Name: leg (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 456758174}
   - component: {fileID: 456758173}
   m_Layer: 6
-  m_Name: Sphere (2)
+  m_Name: leg (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -873,7 +873,7 @@ GameObject:
   - component: {fileID: 788566321}
   - component: {fileID: 788566320}
   m_Layer: 6
-  m_Name: Sphere (4)
+  m_Name: ear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1037,7 +1037,7 @@ GameObject:
   - component: {fileID: 1093874976}
   - component: {fileID: 1093874975}
   m_Layer: 6
-  m_Name: Sphere (3)
+  m_Name: leg (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1156,7 +1156,7 @@ GameObject:
   - component: {fileID: 1850932776}
   - component: {fileID: 1850932775}
   m_Layer: 6
-  m_Name: Sphere
+  m_Name: leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1237,7 +1237,7 @@ GameObject:
   - component: {fileID: 2048363089}
   - component: {fileID: 2048363088}
   m_Layer: 6
-  m_Name: Sphere (5)
+  m_Name: ear (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
