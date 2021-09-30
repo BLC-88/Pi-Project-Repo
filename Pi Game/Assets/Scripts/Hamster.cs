@@ -11,7 +11,7 @@ public class Hamster : MonoBehaviour {
     Quaternion lookRot;
 
     Vector3 pendingPos;
-    public Vector3 lastPos;
+    Vector3 lastPos;
     Vector3 endPos;
     Quaternion startRot;
     Quaternion endRot;
@@ -30,7 +30,7 @@ public class Hamster : MonoBehaviour {
         endPos = position;
     }
 
-    void LateUpdate() {
+    void Update() {
 
         transform.position = lastPos;
 
@@ -48,7 +48,7 @@ public class Hamster : MonoBehaviour {
         
         Vector3 ballPos = ball.transform.position;
 
-        float yPos = Mathf.Clamp(transform.position.y, ballPos.y, ballPos.y + 0.4f);
+        float yPos = Mathf.Clamp(transform.position.y, ballPos.y, ballPos.y + 0.3f);
         transform.position = new Vector3(ballPos.x, yPos, ballPos.z);
 
 
@@ -70,8 +70,9 @@ public class Hamster : MonoBehaviour {
         if (moveDir != Vector3.zero) {
             lookRot = Quaternion.LookRotation(moveDir, Vector3.up);
         }
-        endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0);
-
-        transform.rotation = Quaternion.Slerp(startRot, endRot, rotateSpeed * Time.deltaTime);
+        endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
+        if (ball.isGrounded) {
+            transform.rotation = Quaternion.Slerp(startRot, endRot, rotateSpeed * Time.deltaTime);
+        }
     }
 }
