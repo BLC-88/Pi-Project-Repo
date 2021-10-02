@@ -28,7 +28,6 @@ public class Floater : MonoBehaviour {
             }
             else {
                 waveHeight = waveObject.GetWaveHeight(floaterPoints[i].position.x);
-                print(waveHeight);
             }
             rb.AddForceAtPosition(Physics.gravity / floaterPoints.Count, floaterPoints[i].position, ForceMode.Acceleration);
             if (floaterPoints[i].position.y < waveHeight) {

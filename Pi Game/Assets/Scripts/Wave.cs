@@ -14,6 +14,6 @@ public class Wave : MonoBehaviour {
     }
 
     public float GetWaveHeight(float x) {
-        return transform.position.y + amplitude * Mathf.Sign(x / length + offset);
+        return transform.position.y + amplitude * Mathf.Sin(x / length + offset);
     }
 }
