@@ -4,41 +4,54 @@ using UnityEngine;
 
 public class Floater : MonoBehaviour {
 
-    [SerializeField] Rigidbody rb;
+    [SerializeField] List<Transform> floaterPoints;
     [SerializeField] float depthBeforeSubmerged = 1f;
     [SerializeField] float displacementAmount = 3f;
-    [SerializeField] int floaterPointCount = 1;
     [SerializeField] float waterDrag = 0.99f;
     [SerializeField] float waterAngularDrag = 0.5f;
+    Wave waveObject;
     float waveHeight;
 
+    Rigidbody rb;
+
     void Awake() {
-        if (rb == null) {
-            rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+        if (floaterPoints.Count == 0) {
+            floaterPoints.Add(transform);
         }
     }
 
     void FixedUpdate() {
-        rb.AddForceAtPosition(Physics.gravity / floaterPointCount, transform.position, ForceMode.Acceleration);
-        if (transform.position.y < waveHeight) {
-            float displacementMultiplier = Mathf.Clamp01(waveHeight - transform.position.y / depthBeforeSubmerged) * displacementAmount;
-            rb.AddForceAtPosition(new Vector3(0f, Mathf.Abs(Physics.gravity.y) * displacementMultiplier, 0f), transform.position, ForceMode.Acceleration);
-            rb.AddForce(displacementMultiplier * -rb.velocity * waterDrag * Time.fixedDeltaTime, ForceMode.VelocityChange);
-            rb.AddTorque(displacementMultiplier * -rb.angularVelocity * waterAngularDrag * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        for (int i = 0; i < floaterPoints.Count; i++) {
+            if (waveObject == null) {
+                waveHeight = -100;
+            }
+            else {
+                waveHeight = waveObject.GetWaveHeight(floaterPoints[i].position.x);
+                print(waveHeight);
+            }
+            rb.AddForceAtPosition(Physics.gravity / floaterPoints.Count, floaterPoints[i].position, ForceMode.Acceleration);
+            if (floaterPoints[i].position.y < waveHeight) {
+                float displacementMultiplier = Mathf.Clamp01(waveHeight - floaterPoints[i].position.y / depthBeforeSubmerged) * displacementAmount;
+                rb.AddForceAtPosition(new Vector3(0f, Mathf.Abs(Physics.gravity.y) * displacementMultiplier, 0f), floaterPoints[i].position, ForceMode.Acceleration);
+                rb.AddForce(displacementMultiplier * -rb.velocity * waterDrag * Time.fixedDeltaTime, ForceMode.VelocityChange);
+                rb.AddTorque(displacementMultiplier * -rb.angularVelocity * waterAngularDrag * Time.fixedDeltaTime, ForceMode.VelocityChange);
+            }
         }
     }
 
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerStay(Collider other) {
         Wave waveInstance = other.GetComponent<Wave>();
         if (waveInstance != null) {
-            waveHeight = waveInstance.GetWaveHeight(transform.position.x);
+            waveObject = waveInstance;
+            //waveHeight = waveInstance.GetWaveHeight(transform.position.x);
         }
     }
 
     void OnTriggerExit(Collider other) {
         Wave waveInstance = other.GetComponent<Wave>();
         if (waveInstance != null) {
-            waveHeight = -100f;
+            waveObject = null;
         }
     }
 }
