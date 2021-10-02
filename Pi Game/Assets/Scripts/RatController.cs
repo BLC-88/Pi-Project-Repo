@@ -8,7 +8,7 @@ public class RatController : MonoBehaviour {
     [SerializeField] float turnSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] LayerMask whatIsGround;
-    [HideInInspector] public bool isGrounded;
+     public bool isGrounded;
 
     Vector3 moveDir;
     Quaternion lookRot;
