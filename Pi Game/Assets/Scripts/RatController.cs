@@ -25,8 +25,8 @@ public class RatController : MonoBehaviour {
     }
 
     void Update() {
-        float hor = Input.GetAxis("Horizontal");
-        float ver = Input.GetAxis("Vertical");
+        float hor = Input.GetAxisRaw("Horizontal");
+        float ver = Input.GetAxisRaw("Vertical");
 
         moveDir = ((ver * cam.forward) + (hor * cam.right)).normalized;
 
@@ -50,8 +50,13 @@ public class RatController : MonoBehaviour {
 
     void FixedUpdate() {
         rb.AddForce(moveDir * acceleration * Time.deltaTime);
-        if (moveDir != Vector3.zero && rb.velocity.magnitude >= maxSpeed) {
-            rb.AddForce(-moveDir * acceleration * Time.deltaTime);
+        if (moveDir == Vector3.zero) {
+            rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+        }
+        else {
+            if (rb.velocity.magnitude >= maxSpeed) {
+                rb.AddForce(-moveDir * acceleration * Time.deltaTime);
+            }
         }
     }
 
