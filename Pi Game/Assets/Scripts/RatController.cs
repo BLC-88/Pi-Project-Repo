@@ -8,10 +8,13 @@ public class RatController : MonoBehaviour {
     [SerializeField] float turnSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] LayerMask whatIsGround;
-     public bool isGrounded;
+    [HideInInspector] public bool isGrounded;
 
     Vector3 moveDir;
-    Vector3 turnDir;
+    Quaternion lookRot;
+    Quaternion startRot;
+    Quaternion endRot;
+
     CameraController cam;
     Rigidbody rb;
 
@@ -21,12 +24,10 @@ public class RatController : MonoBehaviour {
     }
 
     void Update() {
-        float hor = -Input.GetAxis("Horizontal");
+        float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
 
-        //moveDir = ((hor * cam.forward) + (ver * cam.right)).normalized;
-        moveDir = (ver * cam.forward).normalized;
-        turnDir = (hor * cam.right).normalized;
+        moveDir = ((ver * cam.forward) + (hor * cam.right)).normalized;
 
         if (CheckGrounded()) {
             isGrounded = true;
@@ -37,11 +38,17 @@ public class RatController : MonoBehaviour {
         else {
             isGrounded = false;
         }
+
+        startRot = transform.rotation;
+        if (moveDir != Vector3.zero) {
+            lookRot = Quaternion.LookRotation(moveDir, Vector3.up);
+        }
+        endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
+        transform.rotation = Quaternion.Slerp(startRot, endRot, turnSpeed * Time.deltaTime);
     }
 
     void FixedUpdate() {
         rb.AddForce(moveDir * moveSpeed * Time.deltaTime);
-        rb.AddTorque(turnDir * turnSpeed * Time.deltaTime);
     }
 
     bool CheckGrounded() {
