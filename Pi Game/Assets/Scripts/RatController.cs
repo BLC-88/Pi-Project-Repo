@@ -50,7 +50,7 @@ public class RatController : MonoBehaviour {
 
     void FixedUpdate() {
         rb.AddForce(moveDir * acceleration * Time.deltaTime);
-        if (rb.velocity.magnitude >= maxSpeed) {
+        if (moveDir != Vector3.zero && rb.velocity.magnitude >= maxSpeed) {
             rb.AddForce(-moveDir * acceleration * Time.deltaTime);
         }
     }
