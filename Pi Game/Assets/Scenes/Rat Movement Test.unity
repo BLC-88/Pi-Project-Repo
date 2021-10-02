@@ -1196,7 +1196,7 @@ Transform:
   m_GameObject: {fileID: 1310206306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.29, y: 1.29, z: 1.29}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1267576687}
   - {fileID: 292238851}
@@ -1382,6 +1382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2023644966}
   - component: {fileID: 2023644967}
+  - component: {fileID: 2023644969}
   - component: {fileID: 2023644965}
   - component: {fileID: 2023644968}
   m_Layer: 6
@@ -1400,13 +1401,13 @@ Rigidbody:
   m_GameObject: {fileID: 2023644964}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 2
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!4 &2023644966
 Transform:
   m_ObjectHideFlags: 0
@@ -1415,8 +1416,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023644964}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: 0, y: 0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1310206307}
   m_Father: {fileID: 0}
@@ -1429,13 +1430,13 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023644964}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9fddda8a41bdcf541b141068be0f3c8a, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.15
-  m_Height: 0.7
+  m_Height: 0.65
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0.025}
+  m_Center: {x: 0, y: 0, z: 0.05}
 --- !u!114 &2023644968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,12 +1449,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda09cb197109ef49a41f3daf0503d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 200
+  turnSpeed: 10
   jumpForce: 200
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1
   isGrounded: 0
+--- !u!135 &2023644969
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023644964}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0.04, z: 0}
 --- !u!1 &2076595415
 GameObject:
   m_ObjectHideFlags: 0

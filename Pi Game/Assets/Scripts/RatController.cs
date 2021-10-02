@@ -52,11 +52,12 @@ public class RatController : MonoBehaviour {
     }
 
     bool CheckGrounded() {
-        //RaycastHit hit;
-        //return Physics.SphereCast(transform.position, 0.14f, Vector3.down, out hit, 0.02f, whatIsGround);
+        RaycastHit hit;
+        return Physics.SphereCast(transform.position, 0.09f, Vector3.down, out hit, 0.02f, whatIsGround);
+        /*
         CapsuleCollider col = GetComponent<CapsuleCollider>();
         Vector3 point1 = transform.position - transform.forward * col.height * 0.5f;
         Vector3 point2 = transform.position + transform.forward * col.height * 0.5f;
-        return Physics.CapsuleCast(point1, point2, col.radius - 0.01f, Vector3.down, 0.02f, whatIsGround);
+        return Physics.CapsuleCast(point1, point2, col.radius - 0.01f, Vector3.down, 0.02f, whatIsGround);*/
     }
 }
