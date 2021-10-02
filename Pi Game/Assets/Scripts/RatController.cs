@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class RatController : MonoBehaviour {
 
-    [SerializeField] float moveSpeed;
+    [SerializeField] float acceleration;
+    [SerializeField] float maxSpeed;
     [SerializeField] float turnSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] LayerMask whatIsGround;
-     public bool isGrounded;
+    [HideInInspector] public bool isGrounded;
 
     Vector3 moveDir;
     Quaternion lookRot;
@@ -48,12 +49,16 @@ public class RatController : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        rb.AddForce(moveDir * moveSpeed * Time.deltaTime);
+        rb.AddForce(moveDir * acceleration * Time.deltaTime);
+        if (rb.velocity.magnitude >= maxSpeed) {
+            rb.AddForce(-moveDir * acceleration * Time.deltaTime);
+        }
     }
 
     bool CheckGrounded() {
+        SphereCollider col = GetComponent<SphereCollider>();
         RaycastHit hit;
-        return Physics.SphereCast(transform.position, 0.09f, Vector3.down, out hit, 0.02f, whatIsGround);
+        return Physics.SphereCast(transform.position + col.center, col.radius - 0.01f, Vector3.down, out hit, 0.02f, whatIsGround);
         /*
         CapsuleCollider col = GetComponent<CapsuleCollider>();
         Vector3 point1 = transform.position - transform.forward * col.height * 0.5f;
