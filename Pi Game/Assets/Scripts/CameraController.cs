@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour {
     Vector3 endPos;
 
     void Start() {
-        target = FindObjectOfType<RollBallController>().gameObject;
+
     }
 
     void LateUpdate() {
