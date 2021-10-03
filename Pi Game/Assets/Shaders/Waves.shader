@@ -6,12 +6,13 @@ Shader "Custom/Waves" {
 		_NormalScale("Normal Scale", float) = 1
 		_Glossiness("Smoothness", Range(0,1)) = 0.5
 		_Metallic("Metallic", Range(0,1)) = 0.0
+
 		_WaveA("Wave A (dir, steepness, wavelength)", Vector) = (1,0,0.5,10)
 		_WaveB("Wave B", Vector) = (0,1,0.25,20)
 		_WaveC("Wave C", Vector) = (1,1,0.15,10)
 	}
 	SubShader{
-		Tags { "Queue" = "Transparent" "RenderType" = "Transparent" }
+		Tags { "RenderType" = "Transparent" "Queue" = "Transparent"}
 		LOD 200
 
 		CGPROGRAM
@@ -46,17 +47,17 @@ Shader "Custom/Waves" {
 				-d.x * d.x * (steepness * sin(f)),
 				d.x * (steepness * cos(f)),
 				-d.x * d.y * (steepness * sin(f))
-				);
+			);
 			binormal += float3(
 				-d.x * d.y * (steepness * sin(f)),
 				d.y * (steepness * cos(f)),
 				-d.y * d.y * (steepness * sin(f))
-				);
+			);
 			return float3(
 				d.x * (a * cos(f)),
 				a * sin(f),
 				d.y * (a * cos(f))
-				);
+			);
 		}
 
 		void vert(inout appdata_full vertexData) {
@@ -76,6 +77,7 @@ Shader "Custom/Waves" {
 			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
 			float3 normal = UnpackNormal(tex2D(_NormalMap, IN.uv_NormalMap));
 			normal.xy *= _NormalScale;
+
 			o.Normal = normal;
 			o.Albedo = c.rgb;
 			o.Metallic = _Metallic;
