@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class RatController : MonoBehaviour {
 
-    [SerializeField] float acceleration;
-    [SerializeField] float maxSpeed;
+    [SerializeField] float speed;
     [SerializeField] float turnSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] LayerMask whatIsGround;
@@ -49,15 +48,7 @@ public class RatController : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        rb.AddForce(moveDir * acceleration * Time.deltaTime);
-        if (moveDir == Vector3.zero) {
-            rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
-        }
-        else {
-            if (rb.velocity.magnitude >= maxSpeed) {
-                rb.AddForce(-moveDir * acceleration * Time.deltaTime);
-            }
-        }
+        rb.MovePosition(transform.position + moveDir * speed * Time.deltaTime);
     }
 
     bool CheckGrounded() {
