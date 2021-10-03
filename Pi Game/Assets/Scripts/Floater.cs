@@ -43,7 +43,6 @@ public class Floater : MonoBehaviour {
         Wave waveInstance = other.GetComponent<Wave>();
         if (waveInstance != null) {
             waveObject = waveInstance;
-            //waveHeight = waveInstance.GetWaveHeight(transform.position.x);
         }
     }
 
