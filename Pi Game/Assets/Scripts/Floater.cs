@@ -27,7 +27,8 @@ public class Floater : MonoBehaviour {
                 waveHeight = -100;
             }
             else {
-                waveHeight = waveObject.GetWaveHeight(floaterPoints[i].position.z);
+                //waveHeight = waveObject.GetWaveHeight(floaterPoints[i].position.z);
+                waveHeight = waveObject.GetWaveHeight(floaterPoints[i].position);
             }
             rb.AddForceAtPosition(Physics.gravity / floaterPoints.Count, floaterPoints[i].position, ForceMode.Acceleration);
             if (floaterPoints[i].position.y < waveHeight) {
@@ -37,7 +38,7 @@ public class Floater : MonoBehaviour {
                 rb.AddTorque(displacementMultiplier * -rb.angularVelocity * waterAngularDrag * Time.fixedDeltaTime, ForceMode.VelocityChange);
 
                 //Add water current
-                rb.AddForceAtPosition(new Vector3(waveObject.direction.x, 0f, waveObject.direction.y).normalized * waveObject.currentSpeed, floaterPoints[i].position, ForceMode.Acceleration);
+                rb.AddForceAtPosition(new Vector3(waveObject.direction.x, 0f, waveObject.direction.z).normalized * waveObject.currentSpeed, floaterPoints[i].position, ForceMode.Acceleration);
             }
         }
     }
