@@ -35,6 +35,9 @@ public class Floater : MonoBehaviour {
                 rb.AddForceAtPosition(new Vector3(0f, Mathf.Abs(Physics.gravity.y) * displacementMultiplier, 0f), floaterPoints[i].position, ForceMode.Acceleration);
                 rb.AddForce(displacementMultiplier * -rb.velocity * waterDrag * Time.fixedDeltaTime, ForceMode.VelocityChange);
                 rb.AddTorque(displacementMultiplier * -rb.angularVelocity * waterAngularDrag * Time.fixedDeltaTime, ForceMode.VelocityChange);
+
+                //Add water current
+                rb.AddForceAtPosition(new Vector3(waveObject.direction.x, 0f, waveObject.direction.y).normalized * waveObject.speed, floaterPoints[i].position, ForceMode.Acceleration);
             }
         }
     }

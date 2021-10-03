@@ -6,8 +6,9 @@ public class Wave : MonoBehaviour {
 
     [SerializeField] float amplitude = 1f;
     [SerializeField] float length = 2f;
-    [SerializeField] float speed = 1f;
-    [SerializeField] float offset = 0f;
+    public float speed = 1f;
+    public Vector2 direction = new Vector2(1, 0);
+    float offset = 0f;
 
     void Update() {
         offset += Time.deltaTime * speed;

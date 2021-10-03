@@ -2,6 +2,8 @@ Shader "Custom/Waves" {
 	Properties{
 		_Color("Color", Color) = (1,1,1,1)
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
+		_NormalMap("Normalmap", 2D) = "Normal" {}
+		_NormalScale("Normal Scale", float) = 1
 		_Glossiness("Smoothness", Range(0,1)) = 0.5
 		_Metallic("Metallic", Range(0,1)) = 0.0
 		_WaveA("Wave A (dir, steepness, wavelength)", Vector) = (1,0,0.5,10)
@@ -9,22 +11,24 @@ Shader "Custom/Waves" {
 		_WaveC("Wave C", Vector) = (1,1,0.15,10)
 	}
 	SubShader{
-		Tags { "RenderType" = "Opaque" }
+		Tags { "Queue" = "Transparent" "RenderType" = "Transparent" }
 		LOD 200
 
 		CGPROGRAM
-		#pragma surface surf Standard fullforwardshadows vertex:vert addshadow
+		#pragma surface surf Standard alpha fullforwardshadows vertex:vert addshadow
 		#pragma target 3.0
-
-		sampler2D _MainTex;
 
 		struct Input {
 			float2 uv_MainTex;
+			float2 uv_NormalMap;
 		};
+		sampler2D _MainTex;
+		sampler2D _NormalMap;
+		float _NormalScale;
 
 		half _Glossiness;
 		half _Metallic;
-		fixed4 _Color;
+		float4 _Color;
 		float4 _WaveA, _WaveB, _WaveC;
 
 		float3 GerstnerWave(
@@ -70,6 +74,9 @@ Shader "Custom/Waves" {
 
 		void surf(Input IN, inout SurfaceOutputStandard o) {
 			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
+			float3 normal = UnpackNormal(tex2D(_NormalMap, IN.uv_NormalMap));
+			normal.xy *= _NormalScale;
+			o.Normal = normal;
 			o.Albedo = c.rgb;
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
