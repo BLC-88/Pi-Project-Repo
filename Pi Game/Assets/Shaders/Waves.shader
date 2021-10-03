@@ -4,9 +4,9 @@ Shader "Custom/Waves" {
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
 		_Glossiness("Smoothness", Range(0,1)) = 0.5
 		_Metallic("Metallic", Range(0,1)) = 0.0
-		_Amplitude("Amplitude", Float) = 1
-		_Wavelength("Wavelength", Float) = 10
-		_Speed("Speed", Float) = 1
+		_WaveA("Wave A (dir, steepness, wavelength)", Vector) = (1,0,0.5,10)
+		_WaveB("Wave B", Vector) = (0,1,0.25,20)
+		_WaveC("Wave C", Vector) = (1,1,0.15,10)
 	}
 	SubShader{
 		Tags { "RenderType" = "Opaque" }
@@ -25,18 +25,45 @@ Shader "Custom/Waves" {
 		half _Glossiness;
 		half _Metallic;
 		fixed4 _Color;
-		float _Amplitude, _Wavelength, _Speed;
+		float4 _WaveA, _WaveB, _WaveC;
+
+		float3 GerstnerWave(
+			float4 wave, float3 p, inout float3 tangent, inout float3 binormal
+		) {
+			float steepness = wave.z;
+			float wavelength = wave.w;
+			float k = 2 * UNITY_PI / wavelength;
+			float c = sqrt(9.8 / k);
+			float2 d = normalize(wave.xy);
+			float f = k * (dot(d, p.xz) - c * _Time.y);
+			float a = steepness / k;
+
+			tangent += float3(
+				-d.x * d.x * (steepness * sin(f)),
+				d.x * (steepness * cos(f)),
+				-d.x * d.y * (steepness * sin(f))
+				);
+			binormal += float3(
+				-d.x * d.y * (steepness * sin(f)),
+				d.y * (steepness * cos(f)),
+				-d.y * d.y * (steepness * sin(f))
+				);
+			return float3(
+				d.x * (a * cos(f)),
+				a * sin(f),
+				d.y * (a * cos(f))
+				);
+		}
 
 		void vert(inout appdata_full vertexData) {
-			float3 p = vertexData.vertex.xyz;
-			
-			float k = 2 * UNITY_PI / _Wavelength;
-			float f = k * (p.x - _Speed * _Time.y);
-			p.y = _Amplitude * sin(f);
-
-			float3 tangent = normalize(float3(1, k * _Amplitude * cos(f), 0));
-			float3 normal = float3(-tangent.y, tangent.x, 0);
-
+			float3 gridPoint = vertexData.vertex.xyz;
+			float3 tangent = float3(1, 0, 0);
+			float3 binormal = float3(0, 0, 1);
+			float3 p = gridPoint;
+			p += GerstnerWave(_WaveA, gridPoint, tangent, binormal);
+			p += GerstnerWave(_WaveB, gridPoint, tangent, binormal);
+			p += GerstnerWave(_WaveC, gridPoint, tangent, binormal);
+			float3 normal = normalize(cross(binormal, tangent));
 			vertexData.vertex.xyz = p;
 			vertexData.normal = normal;
 		}
