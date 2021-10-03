@@ -12,8 +12,7 @@ Shader "Custom/Waves" {
 		_WaveC("Wave C", Vector) = (1,1,0.15,10)
 	}
 	SubShader{
-		//Tags { "RenderType" = "Transparent" "Queue" = "Transparent"}
-		Tags { "RenderType" = "Alpha"}
+		Tags {"RenderType" = "Transparent" "Queue" = "AlphaTest"}
 		LOD 200
 
 		CGPROGRAM
