@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TunnelDespawner : MonoBehaviour
+public class TunnelRespawner : MonoBehaviour
 {
     TunnelSpawner tunnelSpawner;
+    
 
     void Start()
     {
@@ -15,6 +16,6 @@ public class TunnelDespawner : MonoBehaviour
     private void OnTriggerExit(Collider other) 
     {
         tunnelSpawner.SpawnNextTunnel();
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 3);
     }
 }

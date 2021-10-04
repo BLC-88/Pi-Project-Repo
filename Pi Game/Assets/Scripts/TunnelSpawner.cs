@@ -4,21 +4,34 @@ using UnityEngine;
 
 public class TunnelSpawner : MonoBehaviour
 {
+    
+    public  GameObject[] TunnelType;
+    public int Randomizer;
 
-    public GameObject[] TunnelType;
     Vector3 nextSpawnPoint;
+    
     // Start is called before the first frame update
     void Start()
     {
         for (int i = 0; i < 2; i++)
         {
-            SpawnNextTunnel(); //Spawns 2 "Tunnels" to start with
+            SpawnEmptyTunnel(); //Spawns 2 "Tunnels" to start with
         }
     }
 
-    public void SpawnNextTunnel()
+    //Spawns 2 empty tunnels to start with.
+    public void SpawnEmptyTunnel()
     {
         GameObject temp = Instantiate(TunnelType[0], nextSpawnPoint, Quaternion.identity);
+        nextSpawnPoint = temp.transform.GetChild(1).transform.position;
+    }
+
+
+    //Spawns Random Tunnel.
+    public void SpawnNextTunnel()
+    {
+        Randomizer = Random.Range(0, TunnelType.Length);
+        GameObject temp = Instantiate(TunnelType[Randomizer], nextSpawnPoint, Quaternion.identity);
         nextSpawnPoint = temp.transform.GetChild(1).transform.position;
     }
 }

@@ -57576,6 +57576,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TunnelType:
   - {fileID: 1766332290323225356, guid: d3f77533df01f8a48bd6303155140647, type: 3}
+  - {fileID: 1926477403341925071, guid: e0c78124a1088c2429f9be41db34654e, type: 3}
+  - {fileID: 2212675576498251466, guid: 95fca6ba53f943c47bcda2ab9fa4086c, type: 3}
+  - {fileID: 6493199086018150755, guid: d61687562e2045649980e6f881ae038c, type: 3}
+  Randomizer: 0
 --- !u!4 &1606061281
 Transform:
   m_ObjectHideFlags: 0
