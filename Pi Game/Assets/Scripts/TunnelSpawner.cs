@@ -13,9 +13,9 @@ public class TunnelSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 4; i++)
         {
-            SpawnEmptyTunnel(); //Spawns 2 "Tunnels" to start with
+            SpawnEmptyTunnel(); //Spawns 5 "Tunnels" to start with
         }
     }
 
