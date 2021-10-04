@@ -45,7 +45,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 0.2, y: 0.2}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -93,6 +93,6 @@ Material:
     - _Direction: {r: 1, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _WaveA: {r: 0, g: 1, b: 0.1, a: 5}
-    - _WaveB: {r: 0.5, g: 1, b: 0.05, a: 4}
-    - _WaveC: {r: -0.5, g: 1, b: 0.05, a: 3}
+    - _WaveB: {r: 0.5, g: 1, b: 0.1, a: 4}
+    - _WaveC: {r: -0.5, g: 1, b: 0.1, a: 3}
   m_BuildTextureStacks: []
