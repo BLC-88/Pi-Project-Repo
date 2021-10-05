@@ -9,8 +9,10 @@ public class RatController : MonoBehaviour {
     [SerializeField] float jumpForce;
     [SerializeField] LayerMask whatIsGround;
     [HideInInspector] public bool isGrounded;
+    [SerializeField] float gravityStrength = -9.81f;
 
     Vector3 moveDir;
+    Vector3 gravity;
     Quaternion lookRot;
     Quaternion startRot;
     Quaternion endRot;
@@ -49,7 +51,8 @@ public class RatController : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        rb.MovePosition(transform.position + moveDir * speed * Time.deltaTime);
+        rb.MovePosition(transform.position + moveDir * speed * Time.fixedDeltaTime);
+        rb.AddForce(gravity * gravityStrength * Time.fixedDeltaTime);
     }
 
     bool CheckGrounded() {
