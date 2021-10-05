@@ -8,7 +8,7 @@ public class RatController : MonoBehaviour {
     [SerializeField] float turnSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] LayerMask whatIsGround;
-    [HideInInspector] public bool isGrounded;
+     public bool isGrounded;
     [SerializeField] float gravityStrength = 9.81f;
 
     //Vector3 moveDir;
@@ -27,7 +27,7 @@ public class RatController : MonoBehaviour {
 
     void Update() {
         float hor = Input.GetAxisRaw("Horizontal");
-        float ver = Input.GetAxisRaw("Vertical");
+        //float ver = Input.GetAxisRaw("Vertical");
 
         //moveDir = ((ver * transform.forward) + (hor * transform.right)).normalized;
         //moveDir = ver * transform.forward;
@@ -54,22 +54,18 @@ public class RatController : MonoBehaviour {
         endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
         transform.rotation = Quaternion.Slerp(startRot, endRot, turnSpeed * Time.deltaTime);*/
         gravity = -transform.up;
-        rb.AddForce(gravity * gravityStrength, ForceMode.Acceleration);
         //transform.localEulerAngles = Vector3.zero;
     }
 
     void FixedUpdate() {
         //rb.MovePosition(transform.position + moveDir * speed * Time.fixedDeltaTime);
+        rb.MovePosition(transform.position + transform.forward * speed * Time.fixedDeltaTime);
+        rb.AddForce(gravity * gravityStrength, ForceMode.Acceleration);
     }
 
     bool CheckGrounded() {
         SphereCollider col = GetComponent<SphereCollider>();
         RaycastHit hit;
         return Physics.SphereCast(transform.position + col.center, col.radius - 0.01f, -transform.up, out hit, 0.02f, whatIsGround);
-        /*
-        CapsuleCollider col = GetComponent<CapsuleCollider>();
-        Vector3 point1 = transform.position - transform.forward * col.height * 0.5f;
-        Vector3 point2 = transform.position + transform.forward * col.height * 0.5f;
-        return Physics.CapsuleCast(point1, point2, col.radius - 0.01f, Vector3.down, 0.02f, whatIsGround);*/
     }
 }

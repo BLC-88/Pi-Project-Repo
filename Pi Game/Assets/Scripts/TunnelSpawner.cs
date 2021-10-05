@@ -5,9 +5,9 @@ using UnityEngine;
 public class TunnelSpawner : MonoBehaviour
 {
 
-    public  GameObject[] tunnelType;
-    public float[] prob;
-    public int randomizer;
+    [SerializeField]  GameObject[] tunnelType;
+    [SerializeField] float[] prob;
+    int randomizer;
 
     Vector3 nextSpawnPoint;
     
@@ -24,7 +24,8 @@ public class TunnelSpawner : MonoBehaviour
     public void SpawnEmptyTunnel()
     {
         GameObject temp = Instantiate(tunnelType[0], nextSpawnPoint, Quaternion.identity);
-        nextSpawnPoint = temp.transform.GetChild(1).transform.position;
+        //nextSpawnPoint = temp.transform.GetChild(1).transform.position;
+        nextSpawnPoint = temp.GetComponent<TunnelRespawner>().spawnPoint.position;
     }
 
 
@@ -34,13 +35,13 @@ public class TunnelSpawner : MonoBehaviour
         //randomizer = Random.Range(0, tunnelTypes.Count);
         randomizer = Choose(prob);
         GameObject temp = Instantiate(tunnelType[randomizer], nextSpawnPoint, Quaternion.identity);
-        nextSpawnPoint = temp.transform.GetChild(1).transform.position;
-        
+        //nextSpawnPoint = temp.transform.GetChild(1).transform.position;
+        nextSpawnPoint = temp.GetComponent<TunnelRespawner>().spawnPoint.position;
+
     }
 
     int Choose(float[] probs)
     {
-
         float total = 0;
 
         foreach (float elem in probs)

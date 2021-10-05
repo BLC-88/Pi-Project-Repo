@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class TunnelRespawner : MonoBehaviour
 {
+    public Transform spawnPoint;
+
     TunnelSpawner tunnelSpawner;
-    
 
     void Start()
     {
