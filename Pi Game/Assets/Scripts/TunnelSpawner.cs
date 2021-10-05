@@ -20,11 +20,10 @@ public class TunnelSpawner : MonoBehaviour
         }
     }
 
-    //Spawns 2 empty tunnels to start with.
+    //Spawns empty tunnels to start with
     public void SpawnEmptyTunnel()
     {
         GameObject temp = Instantiate(tunnelType[0], nextSpawnPoint, Quaternion.identity);
-        //nextSpawnPoint = temp.transform.GetChild(1).transform.position;
         nextSpawnPoint = temp.GetComponent<TunnelRespawner>().spawnPoint.position;
     }
 
@@ -35,7 +34,6 @@ public class TunnelSpawner : MonoBehaviour
         //randomizer = Random.Range(0, tunnelTypes.Count);
         randomizer = Choose(prob);
         GameObject temp = Instantiate(tunnelType[randomizer], nextSpawnPoint, Quaternion.identity);
-        //nextSpawnPoint = temp.transform.GetChild(1).transform.position;
         nextSpawnPoint = temp.GetComponent<TunnelRespawner>().spawnPoint.position;
 
     }

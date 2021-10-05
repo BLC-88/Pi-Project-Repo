@@ -11,7 +11,12 @@ public class RatController : MonoBehaviour {
      public bool isGrounded;
     [SerializeField] float gravityStrength = 9.81f;
 
-    //Vector3 moveDir;
+    [Header("Model Animations")]
+    [SerializeField] GameObject model;
+    [SerializeField] float modelTurnspeed;
+
+    Vector3 moveDir;
+    Vector3 pivot;
     Vector3 gravity;
     Quaternion lookRot;
     Quaternion startRot;
@@ -31,10 +36,10 @@ public class RatController : MonoBehaviour {
 
         //moveDir = ((ver * transform.forward) + (hor * transform.right)).normalized;
         //moveDir = ver * transform.forward;
+        moveDir = (transform.forward + (hor * transform.right)).normalized;
 
-        Vector3 pivot = new Vector3(0, 0, transform.position.z);
+        pivot = new Vector3(0, 0, transform.position.z);
         transform.RotateAround(pivot, Vector3.forward, turnSpeed * hor * Time.deltaTime);
-        transform.up = pivot - transform.position;
 
         if (CheckGrounded()) {
             isGrounded = true;
@@ -45,16 +50,13 @@ public class RatController : MonoBehaviour {
         else {
             isGrounded = false;
         }
-
-        startRot = transform.rotation;
-        /*
+        
+        startRot = model.transform.localRotation;
         if (moveDir != Vector3.zero) {
-            lookRot = Quaternion.LookRotation(moveDir, Vector3.up);
+            lookRot = Quaternion.LookRotation(moveDir, transform.up);
         }
         endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
-        transform.rotation = Quaternion.Slerp(startRot, endRot, turnSpeed * Time.deltaTime);*/
-        gravity = -transform.up;
-        //transform.localEulerAngles = Vector3.zero;
+        model.transform.localRotation = Quaternion.Slerp(startRot, endRot, modelTurnspeed * Time.deltaTime);
     }
 
     void FixedUpdate() {
@@ -63,9 +65,15 @@ public class RatController : MonoBehaviour {
         rb.AddForce(gravity * gravityStrength, ForceMode.Acceleration);
     }
 
+    void LateUpdate() {
+        transform.up = pivot - transform.position;
+        gravity = -transform.up;
+    }
+
     bool CheckGrounded() {
         SphereCollider col = GetComponent<SphereCollider>();
-        RaycastHit hit;
-        return Physics.SphereCast(transform.position + col.center, col.radius - 0.01f, -transform.up, out hit, 0.02f, whatIsGround);
+        //RaycastHit hit;
+        //return Physics.SphereCast(transform.position + col.center, col.radius - 0.01f, -transform.up, out hit, 0.02f, whatIsGround);
+        return Physics.Raycast(transform.position + col.center, -transform.up, col.radius, whatIsGround);
     }
 }
