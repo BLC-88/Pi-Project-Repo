@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TunnelSpawner : MonoBehaviour
 {
-    
-    public  GameObject[] TunnelType;
-    public int Randomizer;
+
+    public  GameObject[] tunnelType;
+    public float[] prob;
+    public int randomizer;
 
     Vector3 nextSpawnPoint;
     
@@ -22,7 +23,7 @@ public class TunnelSpawner : MonoBehaviour
     //Spawns 2 empty tunnels to start with.
     public void SpawnEmptyTunnel()
     {
-        GameObject temp = Instantiate(TunnelType[0], nextSpawnPoint, Quaternion.identity);
+        GameObject temp = Instantiate(tunnelType[0], nextSpawnPoint, Quaternion.identity);
         nextSpawnPoint = temp.transform.GetChild(1).transform.position;
     }
 
@@ -30,8 +31,36 @@ public class TunnelSpawner : MonoBehaviour
     //Spawns Random Tunnel.
     public void SpawnNextTunnel()
     {
-        Randomizer = Random.Range(0, TunnelType.Length);
-        GameObject temp = Instantiate(TunnelType[Randomizer], nextSpawnPoint, Quaternion.identity);
+        //randomizer = Random.Range(0, tunnelTypes.Count);
+        randomizer = Choose(prob);
+        GameObject temp = Instantiate(tunnelType[randomizer], nextSpawnPoint, Quaternion.identity);
         nextSpawnPoint = temp.transform.GetChild(1).transform.position;
+        
+    }
+
+    int Choose(float[] probs)
+    {
+
+        float total = 0;
+
+        foreach (float elem in probs)
+        {
+            total += elem;
+        }
+
+        float randomPoint = Random.value * total;
+
+        for (int i = 0; i < probs.Length; i++)
+        {
+            if (randomPoint < probs[i])
+            {
+                return i;
+            }
+            else
+            {
+                randomPoint -= probs[i];
+            }
+        }
+        return probs.Length - 1;
     }
 }
