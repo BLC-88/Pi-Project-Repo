@@ -53,14 +53,15 @@ public class RatController : MonoBehaviour {
         
         startRot = model.transform.localRotation;
         if (moveDir != Vector3.zero) {
+            lookRot = Quaternion.LookRotation(moveDir, transform.up);
             if (transform.position.y > pivot.y) {
-                lookRot = Quaternion.LookRotation(moveDir, Vector3.up);
+                endRot = Quaternion.Euler(0, -lookRot.eulerAngles.y, 0f);
             }
             else {
-                lookRot = Quaternion.LookRotation(moveDir, Vector3.down);
+                endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
             }
         }
-        endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
+        //endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
         model.transform.localRotation = Quaternion.Slerp(startRot, endRot, modelTurnspeed * Time.deltaTime);
     }
 
