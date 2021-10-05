@@ -13,9 +13,10 @@ public class RatController : MonoBehaviour {
 
     [Header("Model Animations")]
     [SerializeField] GameObject model;
+    [SerializeField] float modelTurnAngle;
     [SerializeField] float modelTurnspeed;
 
-    Vector3 moveDir;
+    //Vector3 moveDir;
     Vector3 pivot;
     Vector3 gravity;
     Quaternion lookRot;
@@ -36,7 +37,7 @@ public class RatController : MonoBehaviour {
 
         //moveDir = ((ver * transform.forward) + (hor * transform.right)).normalized;
         //moveDir = ver * transform.forward;
-        moveDir = (transform.forward + (hor * transform.right)).normalized;
+        //moveDir = (transform.forward + (hor * transform.right)).normalized;
 
         pivot = new Vector3(0, 0, transform.position.z);
         transform.RotateAround(pivot, Vector3.forward, turnSpeed * hor * Time.deltaTime);
@@ -52,15 +53,18 @@ public class RatController : MonoBehaviour {
         }
         
         startRot = model.transform.localRotation;
+        /*
         if (moveDir != Vector3.zero) {
+            lookRot = Quaternion.LookRotation(moveDir, transform.up);
             if (transform.position.y > pivot.y) {
-                lookRot = Quaternion.LookRotation(moveDir, Vector3.up);
+                endRot = Quaternion.Euler(0, -lookRot.eulerAngles.y, 0f);
             }
             else {
-                lookRot = Quaternion.LookRotation(moveDir, Vector3.down);
+                endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
             }
-        }
-        endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
+        }*/
+        //endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
+        endRot = Quaternion.Euler(0, modelTurnAngle * hor, 0);
         model.transform.localRotation = Quaternion.Slerp(startRot, endRot, modelTurnspeed * Time.deltaTime);
     }
 

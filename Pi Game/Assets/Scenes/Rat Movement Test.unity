@@ -57790,6 +57790,7 @@ MonoBehaviour:
   isGrounded: 0
   gravityStrength: 9.81
   model: {fileID: 1310206306}
+  modelTurnAngle: 30
   modelTurnspeed: 10
 --- !u!135 &2023644969
 SphereCollider:
