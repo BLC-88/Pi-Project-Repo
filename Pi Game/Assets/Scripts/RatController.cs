@@ -40,11 +40,12 @@ public class RatController : MonoBehaviour {
         }
 
         startRot = transform.rotation;
+        /*
         if (moveDir != Vector3.zero) {
             lookRot = Quaternion.LookRotation(moveDir, Vector3.up);
         }
         endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
-        transform.rotation = Quaternion.Slerp(startRot, endRot, turnSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(startRot, endRot, turnSpeed * Time.deltaTime);*/
     }
 
     void FixedUpdate() {
