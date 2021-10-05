@@ -8,7 +8,7 @@ public class RatController : MonoBehaviour {
     [SerializeField] float turnSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] LayerMask whatIsGround;
-     public bool isGrounded;
+    [HideInInspector] public bool isGrounded;
     [SerializeField] float gravityStrength = 9.81f;
 
     [Header("Model Animations")]
@@ -53,7 +53,12 @@ public class RatController : MonoBehaviour {
         
         startRot = model.transform.localRotation;
         if (moveDir != Vector3.zero) {
-            lookRot = Quaternion.LookRotation(moveDir, transform.up);
+            if (transform.position.y > pivot.y) {
+                lookRot = Quaternion.LookRotation(moveDir, Vector3.up);
+            }
+            else {
+                lookRot = Quaternion.LookRotation(moveDir, Vector3.down);
+            }
         }
         endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
         model.transform.localRotation = Quaternion.Slerp(startRot, endRot, modelTurnspeed * Time.deltaTime);
