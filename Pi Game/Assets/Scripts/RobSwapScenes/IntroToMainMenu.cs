@@ -12,7 +12,7 @@ public class IntroToMainMenu : MonoBehaviour
 
     IEnumerator ToMenu()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(7);
         SceneManager.LoadScene(1);
     }
 
