@@ -14,13 +14,16 @@ public class TunnelSpawner : MonoBehaviour
 
     void Awake() {
         prob = new float[tunnelTypes.Length];
-        for (int i = 0; i < tunnelTypes.Length; i++) {
+        for (int i = 0; i < tunnelTypes.Length; i++) 
+        {
             prob[i] = tunnelTypes[i].rarity;
         }
     }
 
     void Start()
     {
+        nextSpawnPoint = transform.position;
+        direction = transform.forward;
         for (int i = 0; i < 4; i++)
         {
             SpawnEmptyTunnel(); //Spawns 5 "Tunnels" to start with

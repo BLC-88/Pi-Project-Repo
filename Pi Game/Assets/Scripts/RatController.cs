@@ -38,15 +38,11 @@ public class RatController : MonoBehaviour {
         //moveDir = ((ver * transform.forward) + (hor * transform.right)).normalized;
         //moveDir = ver * transform.forward;
         //moveDir = (transform.forward + (hor * transform.right)).normalized;
-
+        
         if (moveDir == Vector3.forward) {
             pivot = new Vector3(0, 0, transform.position.z);
         }
-        else if (moveDir == Vector3.right) {
-            pivot = new Vector3(transform.position.x, 0, 0);
-            print(pivot);
-        }
-        else if (moveDir == Vector3.left) {
+        else if (moveDir == Vector3.left || moveDir == Vector3.right) {
             pivot = new Vector3(transform.position.x, 0, 0);
         }
         else if (moveDir == Vector3.down) {
@@ -102,6 +98,7 @@ public class RatController : MonoBehaviour {
         TunnelRespawner tunnel = other.GetComponent<TunnelRespawner>();
         if (tunnel != null) {
             moveDir = tunnel.spawnPoint.forward;
+            transform.rotation = Quaternion.LookRotation(moveDir);
         }
     }
 }
