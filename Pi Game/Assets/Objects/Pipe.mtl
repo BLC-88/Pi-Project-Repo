@@ -1,0 +1,7 @@
+newmtl Sewer_tunnel
+map_Kd E:/Uni/1288 - Advanced Games Design and Development/Pi-Project-Repo/Pi Game/Assets/Textures/Sewer textures/sewer_obj_INSIDE_sewer_Albedo.png
+bump E:/Uni/1288 - Advanced Games Design and Development/Pi-Project-Repo/Pi Game/Assets/Textures/Sewer textures/sewer_obj_INSIDE_sewer_Normal.png
+disp E:/Uni/1288 - Advanced Games Design and Development/Pi-Project-Repo/Pi Game/Assets/Textures/Sewer textures/sewer_obj_INSIDE_sewer_Height.png
+Kd 1 1 1
+d 1
+
