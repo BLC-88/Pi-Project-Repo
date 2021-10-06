@@ -9,18 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro_logo.unity
     guid: 860a0267e48806f458b20f3a38af5b47
   - enabled: 1
-    path: Assets/Scenes/Rat Movement Test.unity
-    guid: 86cae27f82f9bfa4fbc49810625a778c
+    path: Assets/Scenes/Main Menu.unity
+    guid: 3136174b16cec5345a26ba040e0173dd
   - enabled: 1
     path: Assets/Scenes/Cut Scene.unity
     guid: 6babd9557f9e0794fb86c208f7a77cc2
   - enabled: 1
-    path: Assets/Scenes/Game Over.unity
-    guid: 1c3bf504738518243a086dbbcd85c6f6
+    path: Assets/Scenes/Rat Movement Test.unity
+    guid: 86cae27f82f9bfa4fbc49810625a778c
   - enabled: 1
     path: Assets/Scenes/Score Board.unity
     guid: b928c4713f814864fb36d32e17e29e98
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 4dba9622c7fca7549a9d0c2729287626
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: 1c3bf504738518243a086dbbcd85c6f6
   m_configObjects: {}
