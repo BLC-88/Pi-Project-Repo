@@ -91435,9 +91435,9 @@ MonoBehaviour:
   - prefab: {fileID: 3579855917557014040, guid: 5d3060ff5b0d94f4abf3a3738c8be4cc, type: 3}
     rarity: 5
   - prefab: {fileID: 2019803184393057718, guid: 1de3b81ec743c3f4997581a8940a1c1c, type: 3}
-    rarity: 5
+    rarity: 50
   - prefab: {fileID: 6573499393118385633, guid: 9457b68926142f740a5ae67ad1ed8d26, type: 3}
-    rarity: 5
+    rarity: 50
 --- !u!4 &1606061281
 Transform:
   m_ObjectHideFlags: 0
@@ -91445,13 +91445,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606061279}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1636720006
 GameObject:
   m_ObjectHideFlags: 0
@@ -92139,7 +92139,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 2
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 3
 --- !u!4 &2023644966
 Transform:
@@ -92168,7 +92168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda09cb197109ef49a41f3daf0503d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 7
   turnSpeed: 60
   jumpForce: 150
   whatIsGround:
