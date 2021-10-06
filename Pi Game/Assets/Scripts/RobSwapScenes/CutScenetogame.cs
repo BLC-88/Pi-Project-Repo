@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class IntroToMainMenu : MonoBehaviour
+public class CutScenetogame : MonoBehaviour
 {
     void Start()
     {
@@ -12,8 +12,9 @@ public class IntroToMainMenu : MonoBehaviour
 
     IEnumerator ToMenu()
     {
-        yield return new WaitForSeconds(7);
-        SceneManager.LoadScene(0);
+        yield return new WaitForSeconds(12.5f);
+        SceneManager.LoadScene(2);
     }
+
 
 }

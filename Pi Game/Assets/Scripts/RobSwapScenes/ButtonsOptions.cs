@@ -15,10 +15,25 @@ public class ButtonsOptions : MonoBehaviour
 
         IEnumerator ToMenu()
         {
-            yield return new WaitForSeconds(1.5f);
-            SceneManager.LoadScene(3);
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene(1);
         }
     }
+
+
+    public void Cutscene()
+    {
+        {
+            StartCoroutine(ToMenu());
+        }
+        IEnumerator ToMenu()
+        {
+            yield return new WaitForSeconds(1.5f);
+            SceneManager.LoadScene(2);
+        }
+
+    }
+
 
     public void MainMenu()
     {
@@ -28,7 +43,7 @@ public class ButtonsOptions : MonoBehaviour
         IEnumerator ToMenu()
         {
             yield return new WaitForSeconds(1.5f);
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
 
     }
@@ -42,7 +57,7 @@ public class ButtonsOptions : MonoBehaviour
         IEnumerator Tocreditscene()
         {
             yield return new WaitForSeconds(1.5f);
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(4);
         }
     }
 
@@ -56,7 +71,7 @@ public class ButtonsOptions : MonoBehaviour
         IEnumerator ToScoreboardscene()
         {
             yield return new WaitForSeconds(1.5f);
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(3);
         }
     }
 
