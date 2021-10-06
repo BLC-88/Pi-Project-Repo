@@ -100,7 +100,7 @@ public class RatController : MonoBehaviour {
         TunnelRespawner tunnel = other.GetComponent<TunnelRespawner>();
         if (tunnel != null) {
             moveDir = tunnel.spawnPoint.forward;
-            transform.rotation = Quaternion.LookRotation(moveDir);
+            //transform.rotation = Quaternion.LookRotation(moveDir);
         }
     }
 }
