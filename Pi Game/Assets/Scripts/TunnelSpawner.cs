@@ -10,6 +10,7 @@ public class TunnelSpawner : MonoBehaviour
     int randomizer;
 
     Vector3 nextSpawnPoint;
+    Vector3 direction;
     
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,9 @@ public class TunnelSpawner : MonoBehaviour
     //Spawns empty tunnels to start with
     public void SpawnEmptyTunnel()
     {
-        GameObject temp = Instantiate(tunnelType[0], nextSpawnPoint, Quaternion.identity);
+        GameObject temp = Instantiate(tunnelType[0], nextSpawnPoint, Quaternion.LookRotation(direction));
         nextSpawnPoint = temp.GetComponent<TunnelRespawner>().spawnPoint.position;
+        direction = temp.GetComponent<TunnelRespawner>().spawnPoint.forward;
     }
 
 
@@ -33,8 +35,9 @@ public class TunnelSpawner : MonoBehaviour
     {
         //randomizer = Random.Range(0, tunnelTypes.Count);
         randomizer = Choose(prob);
-        GameObject temp = Instantiate(tunnelType[randomizer], nextSpawnPoint, Quaternion.identity);
+        GameObject temp = Instantiate(tunnelType[randomizer], nextSpawnPoint, Quaternion.LookRotation(direction));
         nextSpawnPoint = temp.GetComponent<TunnelRespawner>().spawnPoint.position;
+        direction = temp.GetComponent<TunnelRespawner>().spawnPoint.forward;
 
     }
 
