@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -156,13 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fdb9748e75811d44ae8160c0d99288e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torque: 100
-  jumpForce: 400
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 1
-  isGrounded: 0
-  isJumping: 0
 --- !u!54 &139970019
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -286,8 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  xSensitivity: 1
-  ySensitivity: 1
+  rotateSpeed: 0
   forward: {x: 0, y: 0, z: 0}
   right: {x: 0, y: 0, z: 0}
 --- !u!4 &151532113
@@ -430,8 +422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 750fe1b1caed87d4798db06e25cde2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 20
-  fallSpeed: 30
 --- !u!1 &449699422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,7 +1021,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17466
+  m_Name: pb_Mesh17768
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1795,7 +1785,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17454
+  m_Name: pb_Mesh17756
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2285,7 +2275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e83edcf6c9ce5904583beff494c217a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!1 &1578478597
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ public class RatController : MonoBehaviour {
     [SerializeField] float modelTurnAngle;
     [SerializeField] float modelTurnspeed;
 
-    //Vector3 moveDir;
+    Vector3 moveDir;
     Vector3 pivot;
     Vector3 gravity;
     Quaternion lookRot;
@@ -38,9 +38,17 @@ public class RatController : MonoBehaviour {
         //moveDir = ((ver * transform.forward) + (hor * transform.right)).normalized;
         //moveDir = ver * transform.forward;
         //moveDir = (transform.forward + (hor * transform.right)).normalized;
-
-        pivot = new Vector3(0, 0, transform.position.z);
-        transform.RotateAround(pivot, Vector3.forward, turnSpeed * hor * Time.deltaTime);
+        
+        if (moveDir == Vector3.forward) {
+            pivot = new Vector3(0, 0, transform.position.z);
+        }
+        else if (moveDir == Vector3.left || moveDir == Vector3.right) {
+            pivot = new Vector3(transform.position.x, 0, 0);
+        }
+        else if (moveDir == Vector3.down) {
+            pivot = new Vector3(0, transform.position.y, 0);
+        }
+        transform.RotateAround(pivot, moveDir, turnSpeed * hor * Time.deltaTime);
 
         if (CheckGrounded()) {
             isGrounded = true;
@@ -84,5 +92,13 @@ public class RatController : MonoBehaviour {
         //RaycastHit hit;
         //return Physics.SphereCast(transform.position + col.center, col.radius - 0.01f, -transform.up, out hit, 0.02f, whatIsGround);
         return Physics.Raycast(transform.position + col.center, -transform.up, col.radius, whatIsGround);
+    }
+
+    void OnTriggerEnter(Collider other) {
+        TunnelRespawner tunnel = other.GetComponent<TunnelRespawner>();
+        if (tunnel != null) {
+            moveDir = tunnel.spawnPoint.forward;
+            transform.rotation = Quaternion.LookRotation(moveDir);
+        }
     }
 }

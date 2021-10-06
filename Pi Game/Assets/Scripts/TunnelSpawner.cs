@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class TunnelSpawner : MonoBehaviour
 {
-
-    [SerializeField]  GameObject[] tunnelType;
-    [SerializeField] float[] prob;
+    [SerializeField] TunnelType[] tunnelTypes;
+    //[SerializeField] GameObject[] tunnelType;
+    float[] prob;
     int randomizer;
 
     Vector3 nextSpawnPoint;
-    
-    // Start is called before the first frame update
+    Vector3 direction;
+
+    void Awake() {
+        prob = new float[tunnelTypes.Length];
+        for (int i = 0; i < tunnelTypes.Length; i++) 
+        {
+            prob[i] = tunnelTypes[i].rarity;
+        }
+    }
+
     void Start()
     {
+        nextSpawnPoint = transform.position;
+        direction = transform.forward;
         for (int i = 0; i < 4; i++)
         {
             SpawnEmptyTunnel(); //Spawns 5 "Tunnels" to start with
@@ -23,8 +33,9 @@ public class TunnelSpawner : MonoBehaviour
     //Spawns empty tunnels to start with
     public void SpawnEmptyTunnel()
     {
-        GameObject temp = Instantiate(tunnelType[0], nextSpawnPoint, Quaternion.identity);
+        GameObject temp = Instantiate(tunnelTypes[0].prefab, nextSpawnPoint, Quaternion.LookRotation(direction));
         nextSpawnPoint = temp.GetComponent<TunnelRespawner>().spawnPoint.position;
+        direction = temp.GetComponent<TunnelRespawner>().spawnPoint.forward;
     }
 
 
@@ -33,8 +44,9 @@ public class TunnelSpawner : MonoBehaviour
     {
         //randomizer = Random.Range(0, tunnelTypes.Count);
         randomizer = Choose(prob);
-        GameObject temp = Instantiate(tunnelType[randomizer], nextSpawnPoint, Quaternion.identity);
+        GameObject temp = Instantiate(tunnelTypes[randomizer].prefab, nextSpawnPoint, Quaternion.LookRotation(direction));
         nextSpawnPoint = temp.GetComponent<TunnelRespawner>().spawnPoint.position;
+        direction = temp.GetComponent<TunnelRespawner>().spawnPoint.forward;
 
     }
 
@@ -62,4 +74,11 @@ public class TunnelSpawner : MonoBehaviour
         }
         return probs.Length - 1;
     }
+}
+
+[System.Serializable]
+public class TunnelType 
+{
+    public GameObject prefab;
+    public float rarity;
 }
