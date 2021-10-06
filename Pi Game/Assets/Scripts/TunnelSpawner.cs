@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class TunnelSpawner : MonoBehaviour
 {
-
-    [SerializeField]  GameObject[] tunnelType;
-    [SerializeField] float[] prob;
+    [SerializeField] TunnelType[] tunnelTypes;
+    //[SerializeField] GameObject[] tunnelType;
+    float[] prob;
     int randomizer;
 
     Vector3 nextSpawnPoint;
     Vector3 direction;
-    
-    // Start is called before the first frame update
+
+    void Awake() {
+        prob = new float[tunnelTypes.Length];
+        for (int i = 0; i < tunnelTypes.Length; i++) {
+            prob[i] = tunnelTypes[i].rarity;
+        }
+    }
+
     void Start()
     {
         for (int i = 0; i < 4; i++)
@@ -24,7 +30,7 @@ public class TunnelSpawner : MonoBehaviour
     //Spawns empty tunnels to start with
     public void SpawnEmptyTunnel()
     {
-        GameObject temp = Instantiate(tunnelType[0], nextSpawnPoint, Quaternion.LookRotation(direction));
+        GameObject temp = Instantiate(tunnelTypes[0].prefab, nextSpawnPoint, Quaternion.LookRotation(direction));
         nextSpawnPoint = temp.GetComponent<TunnelRespawner>().spawnPoint.position;
         direction = temp.GetComponent<TunnelRespawner>().spawnPoint.forward;
     }
@@ -35,7 +41,7 @@ public class TunnelSpawner : MonoBehaviour
     {
         //randomizer = Random.Range(0, tunnelTypes.Count);
         randomizer = Choose(prob);
-        GameObject temp = Instantiate(tunnelType[randomizer], nextSpawnPoint, Quaternion.LookRotation(direction));
+        GameObject temp = Instantiate(tunnelTypes[randomizer].prefab, nextSpawnPoint, Quaternion.LookRotation(direction));
         nextSpawnPoint = temp.GetComponent<TunnelRespawner>().spawnPoint.position;
         direction = temp.GetComponent<TunnelRespawner>().spawnPoint.forward;
 
@@ -65,4 +71,11 @@ public class TunnelSpawner : MonoBehaviour
         }
         return probs.Length - 1;
     }
+}
+
+[System.Serializable]
+public class TunnelType 
+{
+    public GameObject prefab;
+    public float rarity;
 }
