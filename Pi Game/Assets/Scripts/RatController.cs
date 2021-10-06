@@ -83,7 +83,7 @@ public class RatController : MonoBehaviour {
     }
 
     void LateUpdate() {
-        transform.up = pivot - transform.position;
+        //transform.up = pivot - transform.position;
         gravity = -transform.up;
     }
 
