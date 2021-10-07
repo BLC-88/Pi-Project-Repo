@@ -93,7 +93,7 @@ public class RatController : MonoBehaviour {
         SphereCollider col = GetComponent<SphereCollider>();
         //RaycastHit hit;
         //return Physics.SphereCast(transform.position + col.center, col.radius - 0.01f, -transform.up, out hit, 0.02f, whatIsGround);
-        return Physics.Raycast(transform.position + col.center, -transform.up, col.radius + 0.01f, whatIsGround);
+        return Physics.Raycast(transform.position + transform.up * col.center.y, -transform.up, col.radius + 0.01f, whatIsGround);
     }
 
     void OnTriggerEnter(Collider other) {
