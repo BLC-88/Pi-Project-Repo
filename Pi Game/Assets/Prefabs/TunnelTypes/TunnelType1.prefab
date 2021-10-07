@@ -5253,7 +5253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowDownSpeedMultiplier: 0.1
-  slowDownDuration: 2
+  slowDownDuration: 3
 --- !u!1 &2254368028093748989
 GameObject:
   m_ObjectHideFlags: 0
@@ -20125,7 +20125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowDownSpeedMultiplier: 0.1
-  slowDownDuration: 2
+  slowDownDuration: 3
 --- !u!1 &6298489471931833030
 GameObject:
   m_ObjectHideFlags: 0
@@ -27802,7 +27802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowDownSpeedMultiplier: 0.1
-  slowDownDuration: 2
+  slowDownDuration: 3
 --- !u!1 &8585030314422190010
 GameObject:
   m_ObjectHideFlags: 0

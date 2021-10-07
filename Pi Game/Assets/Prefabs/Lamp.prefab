@@ -317,8 +317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840786fc0d2a38b40b8127f686936778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowDownSpeedMultiplier: 0.1
-  slowDownDuration: 1
+  slowDownSpeedMultiplier: 0.01
+  slowDownDuration: 1.5
 --- !u!1 &7684414632943469216
 GameObject:
   m_ObjectHideFlags: 0
