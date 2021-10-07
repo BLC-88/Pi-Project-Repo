@@ -8,7 +8,7 @@ public class FloodWave : MonoBehaviour {
     [SerializeField] float moveSpeed = 5f;
     float originalMoveSpeed;
     [SerializeField] float timeBeforeSlowDown = 10f;
-    public float slowDownTimer;
+    float slowDownTimer;
     [SerializeField] Image warningUI;
     float maxDist;
     Color tempCol = new Color();

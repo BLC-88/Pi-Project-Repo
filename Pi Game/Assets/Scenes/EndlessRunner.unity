@@ -34801,6 +34801,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
+  timeBeforeSlowDown: 10
+  slowDownTimer: 0
   warningUI: {fileID: 1247675945}
 --- !u!1 &613191107
 GameObject:
