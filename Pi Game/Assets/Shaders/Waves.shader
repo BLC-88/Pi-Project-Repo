@@ -4,6 +4,10 @@ Shader "Custom/Waves" {
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
 		_NormalMap("Normalmap", 2D) = "Normal" {}
 		_NormalScale("Normal Scale", float) = 1
+
+		_ScrollXSpeed("X scroll speed", Range(-10, 10)) = 0
+		_ScrollYSpeed("Y scroll speed", Range(-10, 10)) = -0.4
+
 		_Glossiness("Smoothness", Range(0,1)) = 0.5
 		_Metallic("Metallic", Range(0,1)) = 0.0
 
@@ -18,6 +22,7 @@ Shader "Custom/Waves" {
 		CGPROGRAM
 		#pragma surface surf Standard alpha fullforwardshadows vertex:vert addshadow
 		#pragma target 3.0
+		#include "UnityCG.cginc"
 
 		struct Input {
 			float2 uv_MainTex;
@@ -26,6 +31,8 @@ Shader "Custom/Waves" {
 		sampler2D _MainTex;
 		sampler2D _NormalMap;
 		float _NormalScale;
+		fixed _ScrollXSpeed;
+		fixed _ScrollYSpeed;
 
 		half _Glossiness;
 		half _Metallic;
@@ -74,11 +81,21 @@ Shader "Custom/Waves" {
 		}
 
 		void surf(Input IN, inout SurfaceOutputStandard o) {
-			fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
-			float3 normal = UnpackNormal(tex2D(_NormalMap, IN.uv_NormalMap));
-			normal.xy *= _NormalScale;
+			fixed offsetX = _ScrollXSpeed * _Time;
+			fixed offsetY = _ScrollYSpeed * _Time;
+			fixed2 offsetUV = fixed2(offsetX, offsetY);
 
-			o.Normal = normal;
+			fixed2 normalUV = IN.uv_NormalMap + offsetUV;
+			fixed2 mainUV = IN.uv_MainTex + offsetUV;
+
+			fixed4 c = tex2D(_MainTex, mainUV) * _Color;
+			o.Albedo = c.rgb;
+
+			float4 normalPixel = tex2D(_NormalMap, normalUV);
+			float3 n = UnpackNormal(normalPixel);
+			n.xy *= _NormalScale;
+			o.Normal = n.xyz;
+
 			o.Albedo = c.rgb;
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;

@@ -8,56 +8,26 @@ public class ButtonsOptions : MonoBehaviour
 {
     public void PlayGame()
     {
-
-        {
-            StartCoroutine(ToMenu());
-        }
-
-        IEnumerator ToMenu()
-        {
-            yield return new WaitForSeconds(1.5f);
-            SceneManager.LoadScene(3);
-        }
+        StartCoroutine(LoadScene("EndlessRunner", 0.1f));
     }
 
     public void MainMenu()
     {
-        {
-            StartCoroutine(ToMenu());
-        }
-        IEnumerator ToMenu()
-        {
-            yield return new WaitForSeconds(1.5f);
-            SceneManager.LoadScene(1);
-        }
-
+        StartCoroutine(LoadScene("MainMenu", 0.1f));
     }
    
     public void CreditsScene()
     {
-        {
-            StartCoroutine(Tocreditscene());
-        }
-
-        IEnumerator Tocreditscene()
-        {
-            yield return new WaitForSeconds(1.5f);
-            SceneManager.LoadScene(5);
-        }
+        StartCoroutine(LoadScene("Credits", 0.1f));
     }
 
     public void GameOver()
     {
-
-        {
-            StartCoroutine(ToScoreboardscene());
-        }
-
-        IEnumerator ToScoreboardscene()
-        {
-            yield return new WaitForSeconds(1.5f);
-            SceneManager.LoadScene(4);
-        }
+        StartCoroutine(LoadScene("GameOver", 0.1f));
     }
 
+    IEnumerator LoadScene(string sceneName, float delay) {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName);
+    }
 }

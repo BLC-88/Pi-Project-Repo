@@ -80,6 +80,8 @@ Material:
     - _Parallax: 0.02
     - _Reflectance: 1
     - _Refraction: 0.9
+    - _ScrollXSpeed: 0
+    - _ScrollYSpeed: -5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 3
