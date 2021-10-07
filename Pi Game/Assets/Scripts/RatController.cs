@@ -84,7 +84,7 @@ public class RatController : MonoBehaviour {
 
     void LateUpdate() {
         //transform.up = pivot - transform.position;
-        Vector3 newRot = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Vector3.SignedAngle(transform.up, pivot - transform.position, moveDir));
+        Vector3 newRot = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Vector3.SignedAngle(Vector3.up, pivot - transform.position, moveDir));
         transform.rotation = Quaternion.Euler(newRot);
         gravity = -transform.up;
     }
