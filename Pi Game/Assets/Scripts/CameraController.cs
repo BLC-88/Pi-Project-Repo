@@ -23,6 +23,9 @@ public class CameraController : MonoBehaviour {
     Vector3 endPos;
 
     void LateUpdate() {
+        if (target == null) {
+            return;
+        }
         startPos = transform.position;
         endPos = target.transform.position;
         currentLerpTime += Time.deltaTime;
