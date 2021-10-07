@@ -5,8 +5,10 @@ using UnityEngine;
 public class SpinningBlades : MonoBehaviour
 {
     
-    float speedMin = 0.5f; //Min Velocity
-    float speedMax = 0.8f; //Max Velocity
+    [SerializeField] float speedMin = 0.5f; //Min Velocity
+    [SerializeField] float speedMax = 0.8f; //Max Velocity
+
+    float speed;
     float randDir;
     
     // Start is called before the first frame update
@@ -14,12 +16,13 @@ public class SpinningBlades : MonoBehaviour
     {
         randDir = Random.Range(1, 3); //Randomizes whether the blade should spin left or right.
         transform.Rotate(new Vector3(0, 180 * randDir, 0));
+        speed = Random.Range(speedMin, speedMax);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, Random.Range(speedMin, speedMax)));
+        transform.Rotate(new Vector3(0, 0, speed));
         /*
         switch (randDir)
         {
