@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TunnelSpawner : MonoBehaviour
 {
+    [SerializeField] int maxNumberOfTunnels = 5;
     [SerializeField] TunnelType[] tunnelTypes;
     //[SerializeField] GameObject[] tunnelType;
     float[] prob;
@@ -24,7 +25,7 @@ public class TunnelSpawner : MonoBehaviour
     {
         nextSpawnPoint = transform.position;
         direction = transform.forward;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < maxNumberOfTunnels - 1; i++)
         {
             SpawnEmptyTunnel(); //Spawns 5 "Tunnels" to start with
         }

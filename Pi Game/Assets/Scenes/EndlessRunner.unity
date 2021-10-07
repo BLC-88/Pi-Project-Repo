@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.015
   m_LinearFogStart: 0
   m_LinearFogEnd: 30
-  m_AmbientSkyColor: {r: 0.2509804, g: 0.24313726, b: 0.20392157, a: 1}
+  m_AmbientSkyColor: {r: 0.25, g: 0.2425, b: 0.2025, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0
@@ -1463,8 +1463,8 @@ MonoBehaviour:
   player: {fileID: 2023644964}
   gameplayCamera: {fileID: 404928012}
   flood: {fileID: 536865822}
-  cutsceneDuration: 14
-  watchCutscene: 1
+  cutsceneDuration: 13
+  watchCutscene: 0
   cutscene: {fileID: 306257546}
 --- !u!4 &479873721
 Transform:
@@ -91641,11 +91641,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2085011ad9dbe104caaf707e76b835ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxNumberOfTunnels: 5
   tunnelTypes:
   - prefab: {fileID: 1766332290323225356, guid: d3f77533df01f8a48bd6303155140647, type: 3}
     rarity: 0
   - prefab: {fileID: 4971387857699607343, guid: e0c78124a1088c2429f9be41db34654e, type: 3}
-    rarity: 50
+    rarity: 0
   - prefab: {fileID: 6693466313450208196, guid: 95fca6ba53f943c47bcda2ab9fa4086c, type: 3}
     rarity: 50
   - prefab: {fileID: 4298459401720789443, guid: d61687562e2045649980e6f881ae038c, type: 3}

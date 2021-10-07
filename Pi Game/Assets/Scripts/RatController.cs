@@ -110,9 +110,12 @@ public class RatController : MonoBehaviour {
     }
 
     public IEnumerator ChangeSpeed(float slowDownDuration, float moveSpeedMultiplier) {
-        float oldMoveSpeed = moveSpeed;
         moveSpeed *= moveSpeedMultiplier;
+        turnSpeed *= moveSpeedMultiplier;
+        modelTurnspeed *= moveSpeedMultiplier;
         yield return new WaitForSeconds(slowDownDuration);
         moveSpeed /= moveSpeedMultiplier;
+        turnSpeed /= moveSpeedMultiplier;
+        modelTurnspeed /= moveSpeedMultiplier;
     }
 }
