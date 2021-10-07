@@ -13,20 +13,25 @@ public class SpinningBlades : MonoBehaviour
     void Start()
     {
         randDir = Random.Range(1, 3); //Randomizes whether the blade should spin left or right.
+        transform.Rotate(new Vector3(0, 180 * randDir, 0));
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch(randDir)
+        transform.Rotate(new Vector3(0, 0, Random.Range(speedMin, speedMax)));
+        /*
+        switch (randDir)
         {
-        case 1: transform.Rotate(new Vector3(0,0,Random.Range(speedMin, speedMax)));
-             //applying rotation to the right
-        break;
+        case 1:
+            //applying rotation to the right
+            transform.Rotate(new Vector3(0,0,Random.Range(speedMin, speedMax)));            
+            break;
 
-        case 2: transform.Rotate(new Vector3(0,0,-Random.Range(speedMin, speedMax)));
-             //applying rotation to the left
-        break;
-        }
+        case 2:
+            //applying rotation to the left
+            transform.Rotate(new Vector3(0,0,-Random.Range(speedMin, speedMax)));
+            break;
+        }*/
     }
 }
