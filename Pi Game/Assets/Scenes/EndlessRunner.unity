@@ -1463,7 +1463,7 @@ MonoBehaviour:
   player: {fileID: 2023644964}
   gameplayCamera: {fileID: 404928012}
   flood: {fileID: 536865822}
-  cutsceneDuration: 13
+  cutsceneDuration: 14
   watchCutscene: 1
   cutscene: {fileID: 306257546}
 --- !u!4 &479873721
@@ -34802,7 +34802,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   timeBeforeSlowDown: 10
-  slowDownTimer: 0
   warningUI: {fileID: 1247675945}
 --- !u!1 &613191107
 GameObject:
@@ -39685,7 +39684,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: be36167563e371c4a9ff1dcd00b986b3, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -92418,7 +92417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda09cb197109ef49a41f3daf0503d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  moveSpeed: 7
   turnSpeed: 60
   jumpForce: 150
   whatIsGround:

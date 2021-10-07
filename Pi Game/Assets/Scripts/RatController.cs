@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RatController : MonoBehaviour {
 
-    [SerializeField] float speed;
+    [SerializeField] float moveSpeed;
     [SerializeField] float turnSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] LayerMask whatIsGround;
@@ -78,7 +78,7 @@ public class RatController : MonoBehaviour {
 
     void FixedUpdate() {
         //rb.MovePosition(transform.position + moveDir * speed * Time.fixedDeltaTime);
-        rb.MovePosition(transform.position + transform.forward * speed * Time.fixedDeltaTime);
+        rb.MovePosition(transform.position + transform.forward * moveSpeed * Time.fixedDeltaTime);
         rb.AddForce(gravity * gravityStrength, ForceMode.Acceleration);
     }
 
@@ -93,7 +93,7 @@ public class RatController : MonoBehaviour {
         SphereCollider col = GetComponent<SphereCollider>();
         //RaycastHit hit;
         //return Physics.SphereCast(transform.position + col.center, col.radius - 0.01f, -transform.up, out hit, 0.02f, whatIsGround);
-        return Physics.Raycast(transform.position + col.center, -transform.up, col.radius, whatIsGround);
+        return Physics.Raycast(transform.position + col.center, -transform.up, col.radius + 0.01f, whatIsGround);
     }
 
     void OnTriggerEnter(Collider other) {
@@ -102,5 +102,17 @@ public class RatController : MonoBehaviour {
             moveDir = tunnel.spawnPoint.forward;
             //transform.rotation = Quaternion.LookRotation(moveDir);
         }
+
+        IObstacle obstacle = other.GetComponent<IObstacle>();
+        if (obstacle != null) {
+            obstacle.Collide(gameObject);
+        }
+    }
+
+    public IEnumerator ChangeSpeed(float slowDownDuration, float moveSpeedMultiplier) {
+        float oldMoveSpeed = moveSpeed;
+        moveSpeed *= moveSpeedMultiplier;
+        yield return new WaitForSeconds(slowDownDuration);
+        moveSpeed /= moveSpeedMultiplier;
     }
 }
