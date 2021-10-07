@@ -15,6 +15,7 @@ public class RatController : MonoBehaviour {
     [SerializeField] GameObject model;
     [SerializeField] float modelTurnAngle;
     [SerializeField] float modelTurnspeed;
+    [SerializeField] RatAnimations animationScript;
 
     Vector3 moveDir;
     Vector3 pivot;
@@ -52,7 +53,9 @@ public class RatController : MonoBehaviour {
 
         if (CheckGrounded()) {
             isGrounded = true;
+            animationScript.anim.SetBool("Jump", false);
             if (Input.GetKeyDown(KeyCode.Space)) {
+                animationScript.anim.SetBool("Jump", true);
                 rb.AddForce(transform.up * jumpForce);
             }
         }
@@ -106,6 +109,7 @@ public class RatController : MonoBehaviour {
 
         IObstacle obstacle = other.GetComponent<IObstacle>();
         if (obstacle != null) {
+            animationScript.anim.SetTrigger("Stumble");
             obstacle.Collide(gameObject);
         }
     }
@@ -115,6 +119,7 @@ public class RatController : MonoBehaviour {
         turnSpeed *= moveSpeedMultiplier;
         modelTurnspeed *= moveSpeedMultiplier;
         yield return new WaitForSeconds(slowDownDuration);
+        animationScript.anim.SetFloat("Jump", moveSpeed * moveSpeedMultiplier * 3.3f / slowDownDuration);
         moveSpeed /= moveSpeedMultiplier;
         turnSpeed /= moveSpeedMultiplier;
         modelTurnspeed /= moveSpeedMultiplier;
