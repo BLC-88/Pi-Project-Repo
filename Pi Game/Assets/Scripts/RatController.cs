@@ -101,6 +101,7 @@ public class RatController : MonoBehaviour {
         if (tunnel != null) {
             moveDir = tunnel.spawnPoint.forward;
             //transform.rotation = Quaternion.LookRotation(moveDir);
+            StartCoroutine(Rotate(moveDir));
         }
 
         IObstacle obstacle = other.GetComponent<IObstacle>();
@@ -117,5 +118,10 @@ public class RatController : MonoBehaviour {
         moveSpeed /= moveSpeedMultiplier;
         turnSpeed /= moveSpeedMultiplier;
         modelTurnspeed /= moveSpeedMultiplier;
+    }
+
+    IEnumerator Rotate(Vector3 direction) {
+        yield return new WaitForSeconds(1f);
+        transform.forward = direction;
     }
 }
