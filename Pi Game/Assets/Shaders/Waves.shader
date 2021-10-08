@@ -22,7 +22,7 @@ Shader "Custom/Waves" {
 		CGPROGRAM
 		#pragma surface surf Standard alpha fullforwardshadows vertex:vert addshadow
 		#pragma target 3.0
-		#include "UnityCG.cginc"
+		#pragma multi_compile_fog
 
 		struct Input {
 			float2 uv_MainTex;
