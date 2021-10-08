@@ -92998,13 +92998,13 @@ MonoBehaviour:
   maxNumberOfTunnels: 5
   tunnelTypes:
   - prefab: {fileID: 1766332290323225356, guid: d3f77533df01f8a48bd6303155140647, type: 3}
-    rarity: 10
+    rarity: 0
   - prefab: {fileID: 4971387857699607343, guid: e0c78124a1088c2429f9be41db34654e, type: 3}
-    rarity: 10
+    rarity: 0
   - prefab: {fileID: 6693466313450208196, guid: 95fca6ba53f943c47bcda2ab9fa4086c, type: 3}
     rarity: 10
   - prefab: {fileID: 4298459401720789443, guid: d61687562e2045649980e6f881ae038c, type: 3}
-    rarity: 10
+    rarity: 0
   - prefab: {fileID: 3579855917557014040, guid: 5d3060ff5b0d94f4abf3a3738c8be4cc, type: 3}
     rarity: 0
   - prefab: {fileID: 2019803184393057718, guid: 1de3b81ec743c3f4997581a8940a1c1c, type: 3}
@@ -93509,7 +93509,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16728
+  m_Name: pb_Mesh24626
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -95157,9 +95157,10 @@ GameObject:
   - component: {fileID: 4451066493688276376}
   - component: {fileID: 4451066493688276375}
   - component: {fileID: 4451066493688276374}
+  - component: {fileID: 4451066493688276377}
   m_Layer: 0
   m_Name: Rat
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95213,6 +95214,19 @@ SphereCollider:
   m_GameObject: {fileID: 4451066493688276373}
   m_Material: {fileID: 13400000, guid: 9fddda8a41bdcf541b141068be0f3c8a, type: 2}
   m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.12
+  m_Center: {x: 0, y: 0.115, z: 0}
+--- !u!135 &4451066493688276377
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4451066493688276373}
+  m_Material: {fileID: 13400000, guid: 9fddda8a41bdcf541b141068be0f3c8a, type: 2}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.12
