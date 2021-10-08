@@ -106,8 +106,10 @@ public class RatController : MonoBehaviour {
             //transform.rotation = Quaternion.LookRotation(moveDir);
             StartCoroutine(Rotate(moveDir));
         }
+    }
 
-        IObstacle obstacle = other.GetComponent<IObstacle>();
+    void OnCollisionEnter(Collision other) {
+        IObstacle obstacle = other.transform.GetComponent<IObstacle>();
         if (obstacle != null) {
             animationScript.anim.SetTrigger("Stumble");
             obstacle.Collide(gameObject);
@@ -118,8 +120,9 @@ public class RatController : MonoBehaviour {
         moveSpeed *= moveSpeedMultiplier;
         turnSpeed *= moveSpeedMultiplier;
         modelTurnspeed *= moveSpeedMultiplier;
-        yield return new WaitForSeconds(slowDownDuration);
-        animationScript.anim.SetFloat("Jump", moveSpeed * moveSpeedMultiplier * 3.3f / slowDownDuration);
+        yield return new WaitForSeconds(slowDownDuration - 0.5f);
+        animationScript.anim.SetTrigger("Getup");
+        yield return new WaitForSeconds(0.5f);
         moveSpeed /= moveSpeedMultiplier;
         turnSpeed /= moveSpeedMultiplier;
         modelTurnspeed /= moveSpeedMultiplier;

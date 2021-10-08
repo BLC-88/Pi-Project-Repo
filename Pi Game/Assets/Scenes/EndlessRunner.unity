@@ -2531,7 +2531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &536865823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40974,20 +40974,20 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8748892135801146194, guid: 940dac7c21b9f1641a4eed5dcf13542c, type: 3}
-  - {fileID: -8255497921437555292, guid: 940dac7c21b9f1641a4eed5dcf13542c, type: 3}
-  - {fileID: 4625029334336817969, guid: 940dac7c21b9f1641a4eed5dcf13542c, type: 3}
-  - {fileID: -59136025557594432, guid: 940dac7c21b9f1641a4eed5dcf13542c, type: 3}
-  - {fileID: -183530207247392898, guid: 940dac7c21b9f1641a4eed5dcf13542c, type: 3}
-  - {fileID: -205629353262513385, guid: 940dac7c21b9f1641a4eed5dcf13542c, type: 3}
-  - {fileID: -1910783980818614310, guid: 940dac7c21b9f1641a4eed5dcf13542c, type: 3}
-  - {fileID: 5775865398287329665, guid: 940dac7c21b9f1641a4eed5dcf13542c, type: 3}
-  - {fileID: -4597107667637640440, guid: 940dac7c21b9f1641a4eed5dcf13542c, type: 3}
-  - {fileID: 6034957751646507721, guid: 940dac7c21b9f1641a4eed5dcf13542c, type: 3}
-  - {fileID: -4612162990109294230, guid: 940dac7c21b9f1641a4eed5dcf13542c, type: 3}
-  - {fileID: 8368722655750445499, guid: 940dac7c21b9f1641a4eed5dcf13542c, type: 3}
-  - {fileID: 5561349426305759274, guid: 940dac7c21b9f1641a4eed5dcf13542c, type: 3}
-  - {fileID: -915216440286173917, guid: 940dac7c21b9f1641a4eed5dcf13542c, type: 3}
+  - {fileID: 2100000, guid: 6be7ec3375686194d846d4b6a5fb0043, type: 2}
+  - {fileID: 2100000, guid: 5c6bbb5b6c6fa204dab20ef0baf0c22f, type: 2}
+  - {fileID: 2100000, guid: 21d7a735f26600c4d957c31b0a7c5b7a, type: 2}
+  - {fileID: 2100000, guid: affd0e7c3e2590e45ab5b50aac2c9c45, type: 2}
+  - {fileID: 2100000, guid: 80c9d8c530c6ea44cbec57f7a4d125e2, type: 2}
+  - {fileID: 2100000, guid: 6be7ec3375686194d846d4b6a5fb0043, type: 2}
+  - {fileID: 2100000, guid: 7a2094cff1aeb1b49b4268bad1fd37d3, type: 2}
+  - {fileID: 2100000, guid: c3e6a17342761b34d829943cec6749c0, type: 2}
+  - {fileID: 2100000, guid: 6e8ef17af001b02419234f303d3bd28b, type: 2}
+  - {fileID: 2100000, guid: 2fbeb7bdc85d79441ad22af4348b75d1, type: 2}
+  - {fileID: 2100000, guid: 2fbeb7bdc85d79441ad22af4348b75d1, type: 2}
+  - {fileID: 2100000, guid: 57640c388ecd43b47b8645de06a5edfc, type: 2}
+  - {fileID: 0}
+  - {fileID: 2100000, guid: f0f10fcc085ce93478fed6aabf8cddcc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92998,13 +92998,13 @@ MonoBehaviour:
   maxNumberOfTunnels: 5
   tunnelTypes:
   - prefab: {fileID: 1766332290323225356, guid: d3f77533df01f8a48bd6303155140647, type: 3}
-    rarity: 1
+    rarity: 0
   - prefab: {fileID: 4971387857699607343, guid: e0c78124a1088c2429f9be41db34654e, type: 3}
-    rarity: 10
+    rarity: 0
   - prefab: {fileID: 6693466313450208196, guid: 95fca6ba53f943c47bcda2ab9fa4086c, type: 3}
     rarity: 10
   - prefab: {fileID: 4298459401720789443, guid: d61687562e2045649980e6f881ae038c, type: 3}
-    rarity: 10
+    rarity: 0
   - prefab: {fileID: 3579855917557014040, guid: 5d3060ff5b0d94f4abf3a3738c8be4cc, type: 3}
     rarity: 0
   - prefab: {fileID: 2019803184393057718, guid: 1de3b81ec743c3f4997581a8940a1c1c, type: 3}
@@ -93509,7 +93509,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24626
+  m_Name: pb_Mesh18398
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
