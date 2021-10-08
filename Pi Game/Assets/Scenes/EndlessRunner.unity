@@ -2531,7 +2531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &536865823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93000,11 +93000,11 @@ MonoBehaviour:
   - prefab: {fileID: 1766332290323225356, guid: d3f77533df01f8a48bd6303155140647, type: 3}
     rarity: 0
   - prefab: {fileID: 4971387857699607343, guid: e0c78124a1088c2429f9be41db34654e, type: 3}
-    rarity: 0
+    rarity: 10
   - prefab: {fileID: 6693466313450208196, guid: 95fca6ba53f943c47bcda2ab9fa4086c, type: 3}
     rarity: 10
   - prefab: {fileID: 4298459401720789443, guid: d61687562e2045649980e6f881ae038c, type: 3}
-    rarity: 0
+    rarity: 10
   - prefab: {fileID: 3579855917557014040, guid: 5d3060ff5b0d94f4abf3a3738c8be4cc, type: 3}
     rarity: 0
   - prefab: {fileID: 2019803184393057718, guid: 1de3b81ec743c3f4997581a8940a1c1c, type: 3}

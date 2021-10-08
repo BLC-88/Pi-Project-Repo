@@ -15,6 +15,10 @@ public class DoorButton : MonoBehaviour
     {
         //Switches the particles off to start with.
         Particles.SetActive(false);
+
+        //rotate so the button spawns randomly around the pipe
+        Vector3 pivot = new Vector3(0, 0, transform.position.z);
+        transform.RotateAround(pivot, transform.root.GetComponent<TunnelRespawner>().spawnPoint.forward, Random.Range(0f, 360f));
     }
 
     void Update()
