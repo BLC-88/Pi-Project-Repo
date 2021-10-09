@@ -340,7 +340,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3f6240267f88df44797d7a1c7ac18c12, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.475
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -92889,11 +92889,11 @@ MonoBehaviour:
   - prefab: {fileID: 4971387857699607343, guid: e0c78124a1088c2429f9be41db34654e, type: 3}
     rarity: 10
   - prefab: {fileID: 6693466313450208196, guid: 95fca6ba53f943c47bcda2ab9fa4086c, type: 3}
-    rarity: 10
+    rarity: 100
   - prefab: {fileID: 4298459401720789443, guid: d61687562e2045649980e6f881ae038c, type: 3}
     rarity: 10
   - prefab: {fileID: 423123406441154611, guid: 22bf5ef5235b8a54f8897909b2577672, type: 3}
-    rarity: 10
+    rarity: 5
 --- !u!4 &1606061281
 Transform:
   m_ObjectHideFlags: 0
