@@ -32,16 +32,18 @@ public class DoorButton : MonoBehaviour
             }
 
             //Opens The Door + Activates The Particles.
-            Door.transform.Translate(transform.up * Time.deltaTime * 2f, Space.World);
+            Door.transform.Translate(Vector3.up * Time.deltaTime * 2f, Space.World);
             Particles.SetActive(true);
         }
     }
 
         //When The player touches the button, different things activate ^
-    private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.tag == "Player")
+    private void OnCollisionEnter(Collision other) {
+        RatController rat = other.transform.GetComponent<RatController>();
+        if(rat != null)
         {
             Opened = true;
+            rat.transform.GetComponentInChildren<RatAnimations>().Successful();
         }
     }
 }
