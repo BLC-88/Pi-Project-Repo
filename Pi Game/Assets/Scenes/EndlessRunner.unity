@@ -1103,7 +1103,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 219853247}
-  footstep: {fileID: 8300000, guid: 68c05e1bba93c7c43b96b3da2412305a, type: 3}
+  audioPitchRange: {x: 0.9, y: 1.1}
+  footstep:
+  - {fileID: 8300000, guid: 94b7877b2a80bcc4f9932c97cc4f2415, type: 3}
+  - {fileID: 8300000, guid: 21508d2d5c6713e43918e75fef2c097e, type: 3}
+  - {fileID: 8300000, guid: 16dd96ff9c4611b46a1786411638b140, type: 3}
+  - {fileID: 8300000, guid: 46f90f22c1e4ab84ba59242da66252b4, type: 3}
+  - {fileID: 8300000, guid: c8291c44c65249147a44ba33ce8d0f46, type: 3}
+  - {fileID: 8300000, guid: a9d5a404a22f5e84a9bdc5f3ec67ff9f, type: 3}
   jump: {fileID: 8300000, guid: 132c57251437f864b91b546eda509a49, type: 3}
   land: {fileID: 8300000, guid: 132c57251437f864b91b546eda509a49, type: 3}
   anim: {fileID: 0}

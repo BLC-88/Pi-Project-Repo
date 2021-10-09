@@ -32,7 +32,7 @@ public class DoorButton : MonoBehaviour
             }
 
             //Opens The Door + Activates The Particles.
-            Door.transform.Translate(transform.up * Time.deltaTime * 2f, Space.World);
+            Door.transform.Translate(Vector3.up * Time.deltaTime * 2f, Space.World);
             Particles.SetActive(true);
         }
     }
