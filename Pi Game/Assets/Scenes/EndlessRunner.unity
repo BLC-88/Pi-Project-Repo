@@ -1103,9 +1103,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 219853247}
-  footstep: {fileID: 8300000, guid: 68c05e1bba93c7c43b96b3da2412305a, type: 3}
+  audioPitchRange: {x: 0, y: 0}
+  footstep:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   jump: {fileID: 8300000, guid: 132c57251437f864b91b546eda509a49, type: 3}
   land: {fileID: 8300000, guid: 132c57251437f864b91b546eda509a49, type: 3}
+  hurt: []
+  success: []
   anim: {fileID: 0}
 --- !u!1 &281722832
 GameObject:
