@@ -38,10 +38,12 @@ public class DoorButton : MonoBehaviour
     }
 
         //When The player touches the button, different things activate ^
-    private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.tag == "Player")
+    private void OnCollisionEnter(Collision other) {
+        RatController rat = other.transform.GetComponent<RatController>();
+        if(rat != null)
         {
             Opened = true;
+            rat.transform.GetComponentInChildren<RatAnimations>().Successful();
         }
     }
 }
