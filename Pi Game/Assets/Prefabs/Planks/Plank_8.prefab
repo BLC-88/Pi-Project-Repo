@@ -13,11 +13,8 @@ GameObject:
   - component: {fileID: 3160404199299717230}
   - component: {fileID: 3667395880574286511}
   - component: {fileID: 1529684242315137307}
-<<<<<<< Updated upstream
   - component: {fileID: -354027822087002065}
   - component: {fileID: -838867191672685235}
-=======
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Plank_8
   m_TagString: Untagged
@@ -115,7 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowDownSpeedMultiplier: 0.01
   slowDownDuration: 1.8
-<<<<<<< Updated upstream
 --- !u!54 &-354027822087002065
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -149,5 +145,3 @@ MonoBehaviour:
   displacementAmount: 3
   waterDrag: 0.99
   waterAngularDrag: 0.5
-=======
->>>>>>> Stashed changes
