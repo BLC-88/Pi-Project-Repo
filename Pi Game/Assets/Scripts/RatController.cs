@@ -136,9 +136,9 @@ public class RatController : MonoBehaviour {
         turnSpeed *= moveSpeedMultiplier;
         modelTurnspeed *= moveSpeedMultiplier;
         animationScript.anim.SetFloat("MoveSpeed", moveSpeed / 4.6f);
-        yield return new WaitForSeconds(slowDownDuration - 0.5f);
+        yield return new WaitForSeconds(slowDownDuration - 0.4f);
         animationScript.anim.SetTrigger("Getup");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         moveSpeed /= moveSpeedMultiplier;
         turnSpeed /= moveSpeedMultiplier;
         modelTurnspeed /= moveSpeedMultiplier;

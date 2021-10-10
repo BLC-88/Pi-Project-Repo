@@ -26,10 +26,13 @@ public class GameManager : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) {
             if (skipCutsceneUI.activeSelf) {
+                skipCutsceneUI.SetActive(false);
                 StartGame();
                 enabled = false;
             }
-            skipCutsceneUI.SetActive(true);
+            else {
+                skipCutsceneUI.SetActive(true);
+            }
         }
     }
 
@@ -51,6 +54,5 @@ public class GameManager : MonoBehaviour {
         gameplayCamera.SetActive(true);
         flood.SetActive(true);
         cutscene.SetActive(false);
-        skipCutsceneUI.SetActive(false);
     }
 }
