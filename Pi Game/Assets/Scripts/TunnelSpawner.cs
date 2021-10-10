@@ -6,7 +6,7 @@ public class TunnelSpawner : MonoBehaviour
 {
     [SerializeField] int maxNumberOfTunnels = 10;
     [SerializeField] int numberOfStartTunnels = 5;
-    [SerializeField] TunnelType[] tunnelTypes;
+    [SerializeField] PrefabArray[] tunnelTypes;
     //[SerializeField] GameObject[] tunnelType;
     float[] prob;
     int randomizer;
@@ -55,25 +55,20 @@ public class TunnelSpawner : MonoBehaviour
 
     }
 
-    int Choose(float[] probs)
-    {
+    int Choose(float[] probs) {
         float total = 0;
 
-        foreach (float elem in probs)
-        {
+        foreach (float elem in probs) {
             total += elem;
         }
 
         float randomPoint = Random.value * total;
 
-        for (int i = 0; i < probs.Length; i++)
-        {
-            if (randomPoint < probs[i])
-            {
+        for (int i = 0; i < probs.Length; i++) {
+            if (randomPoint < probs[i]) {
                 return i;
             }
-            else
-            {
+            else {
                 randomPoint -= probs[i];
             }
         }
@@ -82,7 +77,7 @@ public class TunnelSpawner : MonoBehaviour
 }
 
 [System.Serializable]
-public class TunnelType 
+public class PrefabArray 
 {
     public GameObject prefab;
     public float rarity;

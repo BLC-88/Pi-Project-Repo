@@ -5,6 +5,7 @@ using UnityEngine;
 public class RatController : MonoBehaviour {
 
     [SerializeField] float moveSpeed;
+    float moveSpeedOriginal;
     [SerializeField] float turnSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] LayerMask whatIsGround;
@@ -30,6 +31,7 @@ public class RatController : MonoBehaviour {
     void Awake() {
         rb = GetComponent<Rigidbody>();
         //cam = FindObjectOfType<CameraController>();
+        moveSpeedOriginal = moveSpeed;
     }
 
     void Update() {
@@ -126,6 +128,14 @@ public class RatController : MonoBehaviour {
         moveSpeed /= moveSpeedMultiplier;
         turnSpeed /= moveSpeedMultiplier;
         modelTurnspeed /= moveSpeedMultiplier;
+    }
+
+    public void SetSpeed(float newMoveSpeed) {
+        moveSpeed = newMoveSpeed;
+    }
+
+    public void ResetSpeed() {
+        moveSpeed = moveSpeedOriginal;
     }
 
     IEnumerator Rotate(Vector3 direction) {
