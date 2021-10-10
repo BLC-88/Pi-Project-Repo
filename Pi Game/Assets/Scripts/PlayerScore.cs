@@ -13,11 +13,16 @@ public class PlayerScore : MonoBehaviour {
     float totalTime;
     float cheeseCount;
 
-    void Start() {
-        
+    RatController rat;
+
+    void Awake() {
+        rat = FindObjectOfType<RatController>();
     }
 
     void Update() {
+        distanceTravelled = rat.transform.position.z;
+        totalTime += Time.deltaTime;
+
         distanceTravelledUI.text = distanceTravelled.ToString("f2");
         totalTimeUI.text = totalTime.ToString("f2");
         cheeseCountUI.text = cheeseCount.ToString("f4");

@@ -27,13 +27,7 @@ public class CheesePickup : MonoBehaviour, IPickup {
 
     public void Pickup() {
         playerScore.AddCheese(cheeseAmount);
+        GetComponent<Collider>().enabled = false;
         Destroy(gameObject);
-    }
-
-    public void OnTriggerEnter(Collider other) {
-        RatController rat = other.GetComponent<RatController>();
-        if (rat != null) {
-            Pickup();
-        }
     }
 }

@@ -24,13 +24,7 @@ public class SpeedBoostPickup : MonoBehaviour, IPickup {
 
     public void Pickup() {
         rat.StartCoroutine(rat.ChangeSpeed(speedChangeDuration, speedMultiplier));
+        GetComponent<Collider>().enabled = false;
         Destroy(gameObject);
-    }
-
-    public void OnTriggerEnter(Collider other) {
-        rat = other.GetComponent<RatController>();
-        if (rat != null) {
-            Pickup();
-        }
     }
 }

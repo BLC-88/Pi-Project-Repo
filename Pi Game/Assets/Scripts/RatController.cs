@@ -116,6 +116,10 @@ public class RatController : MonoBehaviour {
             //transform.rotation = Quaternion.LookRotation(moveDir);
             StartCoroutine(Rotate(moveDir));
         }
+        IPickup pickup = other.GetComponent<IPickup>();
+        if (pickup != null) {
+            pickup.Pickup();
+        }
     }
 
     void OnCollisionEnter(Collision other) {

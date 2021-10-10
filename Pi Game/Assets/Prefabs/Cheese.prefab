@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 280525717121243190}
   - component: {fileID: 9197815316819405995}
-  - component: {fileID: 280525717121243189}
+  - component: {fileID: 365932188290940376}
   m_Layer: 0
   m_Name: Cheese
   m_TagString: Cheese
@@ -48,7 +48,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &280525717121243189
+--- !u!114 &365932188290940376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,11 +57,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 280525717121243187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be59a9fbb6f3a149b6e91d681731702, type: 3}
+  m_Script: {fileID: 11500000, guid: 5be27845ae71fb7428edcb3277b45702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMultiplier: 1.25
-  speedChangeDuration: 0.5
+  cheeseAmount: 3.1415927
 --- !u!1 &280525717310235701
 GameObject:
   m_ObjectHideFlags: 0
