@@ -201,7 +201,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4750570903550594588}
-  - component: {fileID: 2225630563778506363}
   - component: {fileID: -3018799706196760764}
   - component: {fileID: 8528028079592435998}
   m_Layer: 0
@@ -230,25 +229,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2225630563778506363
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5379193228195058854}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 267d609b4e93e4e4ba6a16b8ec4fd627, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &-3018799706196760764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomRotation: 1
+  anim: {fileID: 960719965806765018}
   trapPosition: {fileID: 6526365461530559824}
   moveSpeed: 0
   trapDurationMax: 100
@@ -453,10 +434,10 @@ Animator:
   m_GameObject: {fileID: 8625135208858155941}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 267d609b4e93e4e4ba6a16b8ec4fd627, type: 2}
+  m_Controller: {fileID: 9100000, guid: f121ccaf5eced9b4487d7d2549f51229, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RatController : MonoBehaviour {
 
+    [HideInInspector] public bool canMove = true;
     [SerializeField] float moveSpeed;
     float moveSpeedOriginal;
     [SerializeField] float turnSpeed;
@@ -32,53 +33,56 @@ public class RatController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         //cam = FindObjectOfType<CameraController>();
         moveSpeedOriginal = moveSpeed;
+        canMove = true;
     }
 
     void Update() {
-        float hor = Input.GetAxisRaw("Horizontal");
-        //float ver = Input.GetAxisRaw("Vertical");
+        if (canMove) {
+            float hor = Input.GetAxisRaw("Horizontal");
+            //float ver = Input.GetAxisRaw("Vertical");
 
-        //moveDir = ((ver * transform.forward) + (hor * transform.right)).normalized;
-        //moveDir = ver * transform.forward;
-        //moveDir = (transform.forward + (hor * transform.right)).normalized;
-        
-        if (moveDir == Vector3.forward) {
-            pivot = new Vector3(0, 0, transform.position.z);
-        }
-        else if (moveDir == Vector3.left || moveDir == Vector3.right) {
-            pivot = new Vector3(transform.position.x, 0, 0);
-        }
-        else if (moveDir == Vector3.down) {
-            pivot = new Vector3(0, transform.position.y, 0);
-        }
-        transform.RotateAround(pivot, moveDir, turnSpeed * hor * Time.deltaTime);
+            //moveDir = ((ver * transform.forward) + (hor * transform.right)).normalized;
+            //moveDir = ver * transform.forward;
+            //moveDir = (transform.forward + (hor * transform.right)).normalized;
 
-        if (CheckGrounded()) {
-            isGrounded = true;
-            animationScript.anim.SetBool("Jump", false);
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                animationScript.anim.SetBool("Jump", true);
-                rb.AddForce(transform.up * jumpForce);
+            if (moveDir == Vector3.forward) {
+                pivot = new Vector3(0, 0, transform.position.z);
             }
-        }
-        else {
-            isGrounded = false;
-        }
-        
-        startRot = model.transform.localRotation;
-        /*
-        if (moveDir != Vector3.zero) {
-            lookRot = Quaternion.LookRotation(moveDir, transform.up);
-            if (transform.position.y > pivot.y) {
-                endRot = Quaternion.Euler(0, -lookRot.eulerAngles.y, 0f);
+            else if (moveDir == Vector3.left || moveDir == Vector3.right) {
+                pivot = new Vector3(transform.position.x, 0, 0);
+            }
+            else if (moveDir == Vector3.down) {
+                pivot = new Vector3(0, transform.position.y, 0);
+            }
+            transform.RotateAround(pivot, moveDir, turnSpeed * hor * Time.deltaTime);
+
+            if (CheckGrounded()) {
+                isGrounded = true;
+                animationScript.anim.SetBool("Jump", false);
+                if (Input.GetKeyDown(KeyCode.Space)) {
+                    animationScript.anim.SetBool("Jump", true);
+                    rb.AddForce(transform.up * jumpForce);
+                }
             }
             else {
-                endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
+                isGrounded = false;
             }
-        }*/
-        //endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
-        endRot = Quaternion.Euler(0, modelTurnAngle * hor, 0);
-        model.transform.localRotation = Quaternion.Slerp(startRot, endRot, modelTurnspeed * Time.deltaTime);
+
+            startRot = model.transform.localRotation;
+            /*
+            if (moveDir != Vector3.zero) {
+                lookRot = Quaternion.LookRotation(moveDir, transform.up);
+                if (transform.position.y > pivot.y) {
+                    endRot = Quaternion.Euler(0, -lookRot.eulerAngles.y, 0f);
+                }
+                else {
+                    endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
+                }
+            }*/
+            //endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
+            endRot = Quaternion.Euler(0, modelTurnAngle * hor, 0);
+            model.transform.localRotation = Quaternion.Slerp(startRot, endRot, modelTurnspeed * Time.deltaTime);
+        }
     }
 
     void FixedUpdate() {
