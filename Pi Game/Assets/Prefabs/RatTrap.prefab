@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: -3018799706196760764}
   - component: {fileID: 8528028079592435998}
   m_Layer: 0
-  m_Name: Rat_trap
+  m_Name: RatTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
