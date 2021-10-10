@@ -48,7 +48,9 @@ MonoBehaviour:
   pickups:
   - prefab: {fileID: 280525717121243187, guid: 567c6dd8c0dbe104ba7be56076b57577, type: 3}
     rarity: 9
-  - prefab: {fileID: 5396867445906162570, guid: 8b74f0cf69c99c242804e88274bdcad0, type: 3}
+  - prefab: {fileID: 3357803382269822418, guid: 2188677ad85e09b4ea9d714623ec6887, type: 3}
+    rarity: 1
+  - prefab: {fileID: 6757413462161950590, guid: 14d53c340b81e4b4a8760755626580bf, type: 3}
     rarity: 1
 --- !u!1 &798850152204620517
 GameObject:

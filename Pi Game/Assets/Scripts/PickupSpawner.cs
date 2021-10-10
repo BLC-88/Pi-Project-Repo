@@ -19,7 +19,7 @@ public class PickupSpawner : MonoBehaviour {
     void Start() {
         int rand = Random.Range(0, maxNumber);
         for (int i = 0; i < rand; i++) {
-            Vector3 spawnPos = new Vector3(0, -tunnelSize.y + 1f, Random.Range(-tunnelSize.z, tunnelSize.z));
+            Vector3 spawnPos = new Vector3(0, -tunnelSize.y + 0.2f, Random.Range(-tunnelSize.z, tunnelSize.z));
             int randomizer = Choose(prob);
             GameObject pickup = Instantiate(pickups[randomizer].prefab, transform.position + spawnPos, Quaternion.identity);
             pickup.transform.parent = transform;
