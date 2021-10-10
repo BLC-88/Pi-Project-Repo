@@ -63,6 +63,7 @@ MonoBehaviour:
   rotateAngle: {x: 0, y: 30, z: 0}
   bobAmplitude: 0.1
   bobSpeed: 2
+  rat: {fileID: 0}
   cheeseAmount: 3.1415927
 --- !u!1 &280525717310235701
 GameObject:
@@ -286,7 +287,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.901886, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.901886, b: 0, a: 0.29803923}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4994,7 +4995,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.9019608, b: 0, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 3
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

@@ -12,7 +12,7 @@ public class PickupMain : MonoBehaviour, IPickup {
     Vector3 bobPosition;
     Vector3 startPos;
 
-    public RatController rat;
+    [HideInInspector] public RatController rat;
 
     void Awake() {
         InitialiseVariables();

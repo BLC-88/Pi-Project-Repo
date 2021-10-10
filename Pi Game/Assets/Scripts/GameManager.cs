@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    [SerializeField] GameObject playerScore;
+    [SerializeField] GameObject blackScreenUI;
     [SerializeField] GameObject player;
     [SerializeField] GameObject gameplayCamera;
     [SerializeField] GameObject flood;
@@ -20,12 +22,27 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            StartGame();
+            enabled = false;
+        }
+    }
+
     IEnumerator PlayGame() {
-        player.SetActive(false);
         gameplayCamera.SetActive(false);
-        flood.SetActive(false);
         cutscene.SetActive(true);
+        yield return new WaitForEndOfFrame();
+        playerScore.SetActive(false);
+        player.SetActive(false);
+        flood.SetActive(false);
+        blackScreenUI.SetActive(false);
         yield return new WaitForSeconds(cutsceneDuration);
+        StartGame();
+    }
+
+    void StartGame() {
+        playerScore.SetActive(true);
         player.SetActive(true);
         gameplayCamera.SetActive(true);
         flood.SetActive(true);

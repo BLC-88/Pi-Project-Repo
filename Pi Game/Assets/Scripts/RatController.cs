@@ -61,6 +61,7 @@ public class RatController : MonoBehaviour {
                 animationScript.anim.SetBool("Jump", false);
                 if (Input.GetKeyDown(KeyCode.Space)) {
                     animationScript.anim.SetBool("Jump", true);
+                    animationScript.Jump();
                     rb.AddForce(transform.up * jumpForce);
                 }
             }
@@ -134,20 +135,24 @@ public class RatController : MonoBehaviour {
         moveSpeed *= moveSpeedMultiplier;
         turnSpeed *= moveSpeedMultiplier;
         modelTurnspeed *= moveSpeedMultiplier;
+        animationScript.anim.SetFloat("MoveSpeed", moveSpeed / 4.6f);
         yield return new WaitForSeconds(slowDownDuration - 0.5f);
         animationScript.anim.SetTrigger("Getup");
         yield return new WaitForSeconds(0.5f);
         moveSpeed /= moveSpeedMultiplier;
         turnSpeed /= moveSpeedMultiplier;
         modelTurnspeed /= moveSpeedMultiplier;
+        animationScript.anim.SetFloat("MoveSpeed", moveSpeed / 4.6f);
     }
 
     public void SetSpeed(float newMoveSpeed) {
         moveSpeed = newMoveSpeed;
+        animationScript.anim.SetFloat("MoveSpeed", moveSpeed / 4.6f);
     }
 
     public void ResetSpeed() {
         moveSpeed = moveSpeedOriginal;
+        animationScript.anim.SetFloat("MoveSpeed", moveSpeed / 4.6f);
     }
 
     IEnumerator Rotate(Vector3 direction) {

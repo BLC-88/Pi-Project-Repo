@@ -8,7 +8,7 @@ public class ButtonsOptions : MonoBehaviour
 {
     public void PlayGame()
     {
-        StartCoroutine(LoadScene("CutScene", 2f));
+        StartCoroutine(LoadScene("EndlessRunner", 2f));
     }
 
     public void MainMenu()
