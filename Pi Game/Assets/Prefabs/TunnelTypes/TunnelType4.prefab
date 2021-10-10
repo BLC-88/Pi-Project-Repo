@@ -76727,7 +76727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5576924098163478916
 Transform:
   m_ObjectHideFlags: 0
@@ -76772,7 +76772,7 @@ MonoBehaviour:
   - prefab: {fileID: 2229930377840648053, guid: ce0b1e19a84480940a9c6fde94d8cd29, type: 3}
     rarity: 1
   spawnInterval: 1
-  maxNum: 5
+  maxNum: 1
 --- !u!1 &5114598320957351411
 GameObject:
   m_ObjectHideFlags: 0
@@ -110900,7 +110900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &560557036605828090
 Transform:
   m_ObjectHideFlags: 0
@@ -110945,7 +110945,7 @@ MonoBehaviour:
   - prefab: {fileID: 2229930377840648053, guid: ce0b1e19a84480940a9c6fde94d8cd29, type: 3}
     rarity: 1
   spawnInterval: 1
-  maxNum: 5
+  maxNum: 1
 --- !u!1001 &6771805172705536907
 PrefabInstance:
   m_ObjectHideFlags: 0
