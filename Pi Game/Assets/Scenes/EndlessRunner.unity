@@ -41062,7 +41062,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh38558
+  m_Name: pb_Mesh45966
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -94366,15 +94366,15 @@ MonoBehaviour:
   numberOfStartTunnels: 5
   tunnelTypes:
   - prefab: {fileID: 1766332290323225356, guid: d3f77533df01f8a48bd6303155140647, type: 3}
-    rarity: 0
+    rarity: 1
   - prefab: {fileID: 4971387857699607343, guid: e0c78124a1088c2429f9be41db34654e, type: 3}
-    rarity: 0
+    rarity: 10
   - prefab: {fileID: 6693466313450208196, guid: 95fca6ba53f943c47bcda2ab9fa4086c, type: 3}
-    rarity: 0
+    rarity: 10
   - prefab: {fileID: 4298459401720789443, guid: d61687562e2045649980e6f881ae038c, type: 3}
-    rarity: 0
+    rarity: 10
   - prefab: {fileID: 423123406441154611, guid: 22bf5ef5235b8a54f8897909b2577672, type: 3}
-    rarity: 0
+    rarity: 10
   - prefab: {fileID: 3359822906751558317, guid: c45898a6249527349b5b31a79e62cded, type: 3}
     rarity: 10
 --- !u!4 &1606061281
