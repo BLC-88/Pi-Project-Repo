@@ -17,7 +17,7 @@ public class RatController : MonoBehaviour {
     [SerializeField] GameObject model;
     [SerializeField] float modelTurnAngle;
     [SerializeField] float modelTurnspeed;
-    [SerializeField] RatAnimations animationScript;
+    [SerializeField] public RatAnimations animationScript;
 
     Vector3 moveDir;
     Vector3 pivot;
@@ -86,16 +86,20 @@ public class RatController : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        //rb.MovePosition(transform.position + moveDir * speed * Time.fixedDeltaTime);
-        rb.MovePosition(transform.position + transform.forward * moveSpeed * Time.fixedDeltaTime);
-        rb.AddForce(gravity * gravityStrength, ForceMode.Acceleration);
+        if (canMove) {
+            //rb.MovePosition(transform.position + moveDir * speed * Time.fixedDeltaTime);
+            rb.MovePosition(transform.position + transform.forward * moveSpeed * Time.fixedDeltaTime);
+            rb.AddForce(gravity * gravityStrength, ForceMode.Acceleration);
+        }
     }
 
     void LateUpdate() {
-        //transform.up = pivot - transform.position;
-        Vector3 newRot = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Vector3.SignedAngle(Vector3.up, pivot - transform.position, moveDir));
-        transform.rotation = Quaternion.Euler(newRot);
-        gravity = -transform.up;
+        if (canMove) {
+            //transform.up = pivot - transform.position;
+            Vector3 newRot = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Vector3.SignedAngle(Vector3.up, pivot - transform.position, moveDir));
+            transform.rotation = Quaternion.Euler(newRot);
+            gravity = -transform.up;
+        }
     }
 
     bool CheckGrounded() {

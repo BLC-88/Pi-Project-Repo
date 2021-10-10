@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Pickable : MonoBehaviour
 {
-    [SerializeField] float slowDownSpeedMultiplier = 0.1f;
-    [SerializeField] float slowDownDuration = 0.01f;
+    [SerializeField] float speedMultiplier = 0.1f;
+    [SerializeField] float speedChangeDuration = 0.01f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,8 @@ public class Pickable : MonoBehaviour
     }
 
     public void OnTriggerEnter(Collider other) {
-        if(other.gameObject.tag == "Player")
+        RatController rat = other.GetComponent<RatController>();
+        if (rat != null)
         {
             if(gameObject.tag == "Cheese")
             {
@@ -30,8 +31,7 @@ public class Pickable : MonoBehaviour
 
             if(gameObject.tag == "Boost1")
             {
-                RatController rat = other.GetComponent<RatController>();
-                rat.StartCoroutine(rat.ChangeSpeed(slowDownDuration, slowDownSpeedMultiplier));
+                rat.StartCoroutine(rat.ChangeSpeed(speedChangeDuration, speedMultiplier));
             }
             Destroy(gameObject);
         }

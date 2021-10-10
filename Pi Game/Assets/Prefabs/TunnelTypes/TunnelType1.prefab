@@ -43234,6 +43234,8 @@ MonoBehaviour:
     rarity: 9
   - prefab: {fileID: 5396867445906162570, guid: 8b74f0cf69c99c242804e88274bdcad0, type: 3}
     rarity: 1
+  - prefab: {fileID: 5379193228195058854, guid: 977446abfd169654c82c40fae7fadd9c, type: 3}
+    rarity: 1
 --- !u!1 &7480223844211755149
 GameObject:
   m_ObjectHideFlags: 0

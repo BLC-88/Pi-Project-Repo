@@ -47,7 +47,9 @@ public class RatTrap : MonoBehaviour {
                 trapped = false;
                 rat.ResetSpeed();
                 rat.canMove = true;
+                rat.animationScript.anim.SetBool("Fallen", false);
                 UI.SetActive(false);
+                GetComponent<Collider>().enabled = false;
             }
 
             float perc = 1 - trapDuration / trapDurationMax;
@@ -61,6 +63,7 @@ public class RatTrap : MonoBehaviour {
             rat.SetSpeed(moveSpeed);
             rat.canMove = false;
             rat.transform.position = trapPosition.position;
+            rat.animationScript.anim.SetBool("Fallen", true);
             trapped = true;
             UI.SetActive(true);
             anim.enabled = true;
