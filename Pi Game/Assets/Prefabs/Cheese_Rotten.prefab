@@ -60,6 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be27845ae71fb7428edcb3277b45702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateAngle: {x: 0, y: 30, z: 0}
+  bobAmplitude: 0.1
+  bobSpeed: 2
   cheeseAmount: -3.141593
 --- !u!1 &3357803382578395604
 GameObject:

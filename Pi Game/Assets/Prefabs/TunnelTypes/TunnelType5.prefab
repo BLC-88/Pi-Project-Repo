@@ -831,8 +831,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f9d5fb96b20b94099a20a15fe2ae94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxNumber: 15
-  tunnelSize: {x: 5, y: 5, z: 20}
+  maxNumber: 30
+  tunnelSize: {x: 5.15, y: 5.15, z: 20}
   pickups:
   - prefab: {fileID: 5379193228195058854, guid: 977446abfd169654c82c40fae7fadd9c, type: 3}
     rarity: 1

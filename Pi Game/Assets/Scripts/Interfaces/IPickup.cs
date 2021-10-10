@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IPickup {
 
-    public void RotateAnimation();
+    public void Animate();
 
     public void Pickup();
 }

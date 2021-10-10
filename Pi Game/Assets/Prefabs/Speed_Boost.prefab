@@ -4958,6 +4958,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be59a9fbb6f3a149b6e91d681731702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateAngle: {x: 0, y: 30, z: 0}
+  bobAmplitude: 0.1
+  bobSpeed: 2
   speedMultiplier: 2
   speedChangeDuration: 2
 --- !u!1 &8181240314167000138
