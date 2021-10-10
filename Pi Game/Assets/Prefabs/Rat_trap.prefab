@@ -247,7 +247,7 @@ MonoBehaviour:
   moveSpeed: 0
   trapDurationMax: 100
   trapBreakAmount: 20
-  trapDecayRate: 15
+  trapDecayRate: 35
 --- !u!65 &8528028079592435998
 BoxCollider:
   m_ObjectHideFlags: 0
