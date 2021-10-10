@@ -3,7 +3,42 @@ guid: c740b886c4096a7488e7dcbb03dde45c
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: b6dc4a1316e578d4f96e23b4382a9585, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nail metal
+    second: {fileID: 2100000, guid: d77f883f0ac424b44bbaf9cde9c9e3d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nail metal.001
+    second: {fileID: 2100000, guid: d77f883f0ac424b44bbaf9cde9c9e3d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nail metal.002
+    second: {fileID: 2100000, guid: d77f883f0ac424b44bbaf9cde9c9e3d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nail metal.003
+    second: {fileID: 2100000, guid: d77f883f0ac424b44bbaf9cde9c9e3d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nail metal.004
+    second: {fileID: 2100000, guid: d77f883f0ac424b44bbaf9cde9c9e3d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nail metal.005
+    second: {fileID: 2100000, guid: d77f883f0ac424b44bbaf9cde9c9e3d0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
