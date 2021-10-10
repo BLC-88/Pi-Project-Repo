@@ -8,12 +8,6 @@ public class SpeedBoostPickup : PickupMain {
     [SerializeField] float speedMultiplier = 0.1f;
     [SerializeField] float speedChangeDuration = 0.01f;
 
-    RatController rat;
-
-    void Awake() {
-        rat = FindObjectOfType<RatController>();
-    }
-
     public override void Pickup() {
         rat.StartCoroutine(rat.ChangeSpeed(speedChangeDuration, speedMultiplier));
         GetComponent<Collider>().enabled = false;

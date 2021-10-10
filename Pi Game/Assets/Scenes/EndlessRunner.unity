@@ -1198,6 +1198,8 @@ MonoBehaviour:
   success:
   - {fileID: 8300000, guid: 898f4437ed46e2a4d8a327c03b016a60, type: 3}
   - {fileID: 8300000, guid: 681d4e6258ae7c1408f451329fc3e7a6, type: 3}
+  pickup:
+  - {fileID: 8300000, guid: 2d7454ae26e3fcd40ada12584ce3bc50, type: 3}
   anim: {fileID: 0}
 --- !u!1 &281722832
 GameObject:

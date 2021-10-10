@@ -9,7 +9,8 @@ public class CheesePickup : PickupMain {
 
     PlayerScore playerScore;
 
-    void Awake() {
+    public override void InitialiseVariables() {
+        base.InitialiseVariables();
         playerScore = FindObjectOfType<PlayerScore>();
     }
 

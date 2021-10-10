@@ -8,8 +8,19 @@ public class PickupMain : MonoBehaviour, IPickup {
     [SerializeField] Vector3 rotateAngle = new Vector3(0f, 30f, 0f);
     [SerializeField] float bobAmplitude = 0.2f;
     [SerializeField] float bobSpeed = 0.5f;
+
     Vector3 bobPosition;
     Vector3 startPos;
+
+    public RatController rat;
+
+    void Awake() {
+        InitialiseVariables();
+    }
+
+    public virtual void InitialiseVariables() {
+        rat = FindObjectOfType<RatController>();
+    }
 
     void Start() {
         Vector3 pivot = new Vector3(0, 0, transform.position.z);
@@ -28,6 +39,7 @@ public class PickupMain : MonoBehaviour, IPickup {
     }
 
     public virtual void Pickup() {
+        rat.animationScript.Pickup();
         Destroy(gameObject);
     }
 }

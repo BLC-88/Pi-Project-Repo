@@ -11,6 +11,7 @@ public class RatAnimations : MonoBehaviour {
     [SerializeField] AudioClip land;
     [SerializeField] AudioClip[] hurt;
     [SerializeField] AudioClip[] success;
+    [SerializeField] AudioClip[] pickup;
 
     [HideInInspector] public Animator anim;
 
@@ -44,5 +45,11 @@ public class RatAnimations : MonoBehaviour {
         audioSource.pitch = 1f;
         int rand = Random.Range(0, success.Length);
         audioSource.PlayOneShot(success[rand]);
+    }
+
+    public void Pickup() {
+        audioSource.pitch = Random.Range(audioPitchRange.x, audioPitchRange.y);
+        int rand = Random.Range(0, pickup.Length);
+        audioSource.PlayOneShot(pickup[rand]);
     }
 }
