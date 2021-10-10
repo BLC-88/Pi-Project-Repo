@@ -12,5 +12,6 @@ public class SimpleObstacle : MonoBehaviour, IObstacle {
         if (rat != null) {
             rat.StartCoroutine(rat.ChangeSpeed(slowDownDuration, slowDownSpeedMultiplier));
         }
+        GetComponent<Collider>().enabled = false;
     }
 }
