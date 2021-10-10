@@ -48,6 +48,7 @@ public class RatTrap : MonoBehaviour {
                 rat.ResetSpeed();
                 rat.canMove = true;
                 rat.animationScript.anim.SetBool("Fallen", false);
+                rat.animationScript.Successful();
                 UI.SetActive(false);
                 GetComponent<Collider>().enabled = false;
             }
