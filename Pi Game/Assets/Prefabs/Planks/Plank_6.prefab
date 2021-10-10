@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 6913826369544896447}
   - component: {fileID: 2981324005738811060}
   - component: {fileID: 3257386642480524200}
-  - component: {fileID: 6794566206350070004}
-  - component: {fileID: 4711062023209311496}
   m_Layer: 0
   m_Name: Plank_6
   m_TagString: Untagged
@@ -112,36 +110,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowDownSpeedMultiplier: 0.01
   slowDownDuration: 1.8
---- !u!54 &6794566206350070004
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4968072936626593386}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &4711062023209311496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4968072936626593386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afea7baa284ad08468557802d46106ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floaterPoints: []
-  depthBeforeSubmerged: 1
-  displacementAmount: 3
-  waterDrag: 0.99
-  waterAngularDrag: 0.5
