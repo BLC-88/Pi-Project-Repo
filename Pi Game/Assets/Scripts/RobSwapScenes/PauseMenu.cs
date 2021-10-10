@@ -39,6 +39,12 @@ public class PauseMenu : MonoBehaviour
         musicUI.SetActive(false);
     }
 
+    public void Restart() {
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void QuitGame()
     {
         Application.Quit();

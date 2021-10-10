@@ -12,6 +12,7 @@ public class FloodWave : MonoBehaviour {
     [SerializeField] Image warningUI;
     float maxDist;
     Color tempCol = new Color();
+    [SerializeField] GameObject gameOverUI;
 
     RatController player;
 
@@ -47,7 +48,8 @@ public class FloodWave : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         if (other.GetComponent<RatController>()) {
-            print("gameover");
+            Time.timeScale = 0f;
+            gameOverUI.SetActive(true);
         }
     }
 }
