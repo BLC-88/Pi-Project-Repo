@@ -94370,6 +94370,7 @@ MonoBehaviour:
   - prefab: {fileID: 4971387857699607343, guid: e0c78124a1088c2429f9be41db34654e, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     rarity: 10
   - prefab: {fileID: 6693466313450208196, guid: 95fca6ba53f943c47bcda2ab9fa4086c, type: 3}
     rarity: 20
@@ -94380,6 +94381,9 @@ MonoBehaviour:
 >>>>>>> parent of 31c5204 (edited something)
 =======
     rarity: 20
+=======
+    rarity: 10
+>>>>>>> parent of beaee7a (added simple spawner)
   - prefab: {fileID: 6693466313450208196, guid: 95fca6ba53f943c47bcda2ab9fa4086c, type: 3}
     rarity: 10
 >>>>>>> parent of 31c5204 (edited something)
