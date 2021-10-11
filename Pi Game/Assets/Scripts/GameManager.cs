@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] GameObject player;
     [SerializeField] GameObject gameplayCamera;
     [SerializeField] GameObject flood;
+    [SerializeField] GameObject floodWarning;
     [SerializeField] float cutsceneDuration;
     [SerializeField] bool watchCutscene;
     [SerializeField] GameObject cutscene;
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour {
         playerScore.SetActive(false);
         player.SetActive(false);
         flood.SetActive(false);
+        floodWarning.SetActive(false);
         blackScreenUI.SetActive(false);
         yield return new WaitForSeconds(cutsceneDuration);
         StartGame();
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour {
         player.SetActive(true);
         gameplayCamera.SetActive(true);
         flood.SetActive(true);
+        floodWarning.SetActive(true);
         cutscene.SetActive(false);
         skipCutsceneUI.SetActive(false);
         playing = true;

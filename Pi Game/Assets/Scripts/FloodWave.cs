@@ -51,6 +51,7 @@ public class FloodWave : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         if (other.GetComponent<RatController>()) {
             Time.timeScale = 0f;
+            FindObjectOfType<PlayerScore>().SetHighScore();
             gameOverUI.SetActive(true);
         }
     }
