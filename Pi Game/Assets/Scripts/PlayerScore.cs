@@ -43,6 +43,9 @@ public class PlayerScore : MonoBehaviour {
         if (distanceTravelled > highestDistanceTravelled) highestDistanceTravelled = distanceTravelled;
         if (totalTime > highestTotalTime) highestTotalTime = totalTime;
         if (cheeseCount > highestCheeseCount) highestCheeseCount = cheeseCount;
+        highestDistanceTravelledUI.text = distanceTravelled.ToString("f2");
+        highestTotalTimeUI.text = totalTime.ToString("f2");
+        highestCheeseCountUI.text = cheeseCount.ToString("f4");
     }
 
     public void AddCheese(float amount) {
