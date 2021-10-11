@@ -37317,8 +37317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2085011ad9dbe104caaf707e76b835ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxNumberOfTunnels: 10
-  numberOfStartTunnels: 5
+  maxNumberOfTunnels: 6
+  numberOfStartTunnels: 4
   tunnelTypes:
   - prefab: {fileID: 1766332290323225356, guid: d3f77533df01f8a48bd6303155140647, type: 3}
     rarity: 1

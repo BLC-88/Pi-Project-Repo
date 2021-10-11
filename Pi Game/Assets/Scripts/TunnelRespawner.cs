@@ -16,7 +16,10 @@ public class TunnelRespawner : MonoBehaviour
     //When Exiting a tunnel, destroys it, Spawns another one in the front.
     private void OnTriggerExit(Collider other) 
     {
-        tunnelSpawner.SpawnNextTunnel();
-        Destroy(gameObject, 3);
+        RatController rat = other.GetComponent<RatController>();
+        if (other != null) {
+            tunnelSpawner.SpawnNextTunnel();
+            Destroy(gameObject, 2f);
+        }
     }
 }

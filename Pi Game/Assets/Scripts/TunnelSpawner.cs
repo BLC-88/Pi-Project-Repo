@@ -26,11 +26,11 @@ public class TunnelSpawner : MonoBehaviour
     {
         nextSpawnPoint = transform.position;
         direction = transform.forward;
-        for (int i = 0; i < numberOfStartTunnels - 1; i++)
+        for (int i = 0; i < numberOfStartTunnels; i++)
         {
             SpawnEmptyTunnel(); //Spawns 5 "Empty Tunnels" to start with
         }
-        for (int i = 0; i < maxNumberOfTunnels - numberOfStartTunnels - 1; i++) {
+        for (int i = 0; i < maxNumberOfTunnels - numberOfStartTunnels; i++) {
             SpawnNextTunnel(); //Spawns the rest of the tunnels
         }
     }
