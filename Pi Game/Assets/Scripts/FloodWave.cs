@@ -10,6 +10,7 @@ public class FloodWave : MonoBehaviour {
     [SerializeField] float timeBeforeSlowDown = 10f;
     float slowDownTimer;
     [SerializeField] Image warningUI;
+    [SerializeField] Image warningBar;
     float maxDist;
     Color tempCol = new Color();
     [SerializeField] GameObject gameOverUI;
@@ -33,6 +34,7 @@ public class FloodWave : MonoBehaviour {
         float a = 1 - dist / maxDist;
         tempCol.a = a;
         warningUI.color = tempCol;
+        warningBar.fillAmount = a;
 
         if (dist < maxDist) {
             slowDownTimer += Time.deltaTime;

@@ -4950,7 +4950,7 @@ MonoBehaviour:
   bobAmplitude: 0.1
   bobSpeed: 2
   rat: {fileID: 0}
-  speedMultiplier: 1.5
+  speedMultiplier: 0.5
   speedChangeDuration: 4
 --- !u!1 &2710951886818820858
 GameObject:

@@ -64,6 +64,7 @@ public class RatTrap : MonoBehaviour {
             rat.SetSpeed(moveSpeed);
             rat.canMove = false;
             rat.transform.position = trapPosition.position;
+            rat.transform.rotation = trapPosition.rotation;
             rat.animationScript.anim.SetBool("Fallen", true);
             trapped = true;
             UI.SetActive(true);
