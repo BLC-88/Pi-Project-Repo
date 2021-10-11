@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] bool watchCutscene;
     [SerializeField] GameObject cutscene;
     [SerializeField] GameObject skipCutsceneUI;
+    bool playing;
 
     void Start() {
         if (watchCutscene) {
@@ -24,14 +25,16 @@ public class GameManager : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            if (skipCutsceneUI.activeSelf) {
-                skipCutsceneUI.SetActive(false);
-                StartGame();
-                enabled = false;
-            }
-            else {
-                skipCutsceneUI.SetActive(true);
+        if (!playing) {
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                if (skipCutsceneUI.activeSelf) {
+                    skipCutsceneUI.SetActive(false);
+                    StartGame();
+                    playing = true;
+                }
+                else {
+                    skipCutsceneUI.SetActive(true);
+                }
             }
         }
     }
@@ -55,5 +58,6 @@ public class GameManager : MonoBehaviour {
         flood.SetActive(true);
         cutscene.SetActive(false);
         skipCutsceneUI.SetActive(false);
+        playing = true;
     }
 }

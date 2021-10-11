@@ -39057,7 +39057,7 @@ MonoBehaviour:
   canMove: 0
   moveSpeed: 7
   turnSpeed: 60
-  jumpForce: 100
+  jumpForce: 120
   whatIsGround:
     serializedVersion: 2
     m_Bits: 17
