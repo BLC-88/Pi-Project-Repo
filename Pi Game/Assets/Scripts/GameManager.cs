@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
     bool playing;
 
     void Start() {
+        blackScreenUI.SetActive(true);
         if (watchCutscene) {
             StartCoroutine(PlayGame());
         }
