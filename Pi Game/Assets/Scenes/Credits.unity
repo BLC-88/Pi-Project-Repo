@@ -1400,7 +1400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 770511775}
   m_Layer: 5
-  m_Name: Special Thanks (1)
+  m_Name: Very Special Thanks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1424,7 +1424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 500, y: -930}
+  m_AnchoredPosition: {x: 500, y: -940}
   m_SizeDelta: {x: 600, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &836982409
@@ -2276,7 +2276,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b3366896a822deb4aa7a3c64dcf60adb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2944,7 +2944,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: special special thanks
+  m_Text: very special thanks
 --- !u!222 &1519915727
 CanvasRenderer:
   m_ObjectHideFlags: 0
