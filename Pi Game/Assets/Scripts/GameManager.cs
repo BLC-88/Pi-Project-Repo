@@ -54,5 +54,6 @@ public class GameManager : MonoBehaviour {
         gameplayCamera.SetActive(true);
         flood.SetActive(true);
         cutscene.SetActive(false);
+        skipCutsceneUI.SetActive(false);
     }
 }
