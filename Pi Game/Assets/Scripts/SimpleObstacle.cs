@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SimpleObstacle : MonoBehaviour, IObstacle {
 
+    [SerializeField] bool keepCollision = false;
     [SerializeField] float slowDownSpeedMultiplier = 0.01f;
     [SerializeField] float slowDownDuration = 1.8f;
 
@@ -12,6 +13,6 @@ public class SimpleObstacle : MonoBehaviour, IObstacle {
         if (rat != null) {
             rat.StartCoroutine(rat.ChangeSpeed(slowDownDuration, slowDownSpeedMultiplier));
         }
-        GetComponent<Collider>().enabled = false;
+        GetComponent<Collider>().enabled = keepCollision;
     }
 }

@@ -42139,6 +42139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840786fc0d2a38b40b8127f686936778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keepCollision: 1
   slowDownSpeedMultiplier: 0.01
   slowDownDuration: 1.8
 --- !u!1 &6693466313450208196

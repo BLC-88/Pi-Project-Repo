@@ -47,11 +47,11 @@ MonoBehaviour:
   tunnelSize: {x: 5, y: 5, z: 20}
   pickups:
   - prefab: {fileID: 280525717121243187, guid: 567c6dd8c0dbe104ba7be56076b57577, type: 3}
-    rarity: 9
+    rarity: 0
   - prefab: {fileID: 3357803382269822418, guid: 2188677ad85e09b4ea9d714623ec6887, type: 3}
-    rarity: 3
+    rarity: 0
   - prefab: {fileID: 2359040120681750936, guid: 8e86e1ab01b93de42b25511d1d2557ae, type: 3}
-    rarity: 1
+    rarity: 0
   - prefab: {fileID: 6757413462161950590, guid: 14d53c340b81e4b4a8760755626580bf, type: 3}
     rarity: 1
 --- !u!1 &798850152204620517

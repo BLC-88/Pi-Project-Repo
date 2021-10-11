@@ -127,6 +127,7 @@ public class RatController : MonoBehaviour {
         IObstacle obstacle = other.transform.GetComponent<IObstacle>();
         if (obstacle != null) {
             animationScript.anim.SetTrigger("Stumble");
+            animationScript.anim.SetBool("Getup", false);
             obstacle.Collide(gameObject);
         }
     }
@@ -137,8 +138,9 @@ public class RatController : MonoBehaviour {
         modelTurnspeed *= moveSpeedMultiplier;
         animationScript.anim.SetFloat("MoveSpeed", moveSpeed / 4.6f);
         yield return new WaitForSeconds(slowDownDuration - 0.4f);
-        animationScript.anim.SetTrigger("Getup");
+        animationScript.anim.SetBool("Getup", true);
         yield return new WaitForSeconds(0.4f);
+        animationScript.anim.SetBool("Getup", false);
         moveSpeed /= moveSpeedMultiplier;
         turnSpeed /= moveSpeedMultiplier;
         modelTurnspeed /= moveSpeedMultiplier;
