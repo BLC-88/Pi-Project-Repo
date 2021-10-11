@@ -5,6 +5,7 @@ using UnityEngine;
 public class Floater : MonoBehaviour {
 
     [SerializeField] List<Transform> floaterPoints;
+    [SerializeField] bool ignoreCustomGravity;
     [SerializeField] float depthBeforeSubmerged = 1f;
     [SerializeField] float displacementAmount = 3f;
     [SerializeField] float waterDrag = 0.99f;
@@ -30,7 +31,7 @@ public class Floater : MonoBehaviour {
                 //waveHeight = waveObject.GetWaveHeight(floaterPoints[i].position.z);
                 waveHeight = waveObject.GetWaveHeight(floaterPoints[i].position);
             }
-            rb.AddForceAtPosition(Physics.gravity / floaterPoints.Count, floaterPoints[i].position, ForceMode.Acceleration);
+            if (!ignoreCustomGravity) rb.AddForceAtPosition(Physics.gravity / floaterPoints.Count, floaterPoints[i].position, ForceMode.Acceleration);
             if (floaterPoints[i].position.y < waveHeight) {
                 float displacementMultiplier = Mathf.Clamp01(waveHeight - floaterPoints[i].position.y / depthBeforeSubmerged) * displacementAmount;
                 rb.AddForceAtPosition(new Vector3(0f, Mathf.Abs(Physics.gravity.y) * displacementMultiplier, 0f), floaterPoints[i].position, ForceMode.Acceleration);

@@ -48,6 +48,7 @@ public class RatTrap : MonoBehaviour {
                 rat.ResetSpeed();
                 rat.canMove = true;
                 rat.animationScript.anim.SetBool("Fallen", false);
+                FindObjectOfType<CameraController>().canRotate = true;
                 rat.animationScript.Successful();
                 UI.SetActive(false);
                 GetComponent<Collider>().enabled = false;
@@ -65,6 +66,8 @@ public class RatTrap : MonoBehaviour {
             rat.canMove = false;
             rat.transform.position = trapPosition.position;
             rat.transform.rotation = trapPosition.rotation;
+            rat.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            FindObjectOfType<CameraController>().canRotate = false;
             rat.animationScript.anim.SetBool("Fallen", true);
             trapped = true;
             UI.SetActive(true);

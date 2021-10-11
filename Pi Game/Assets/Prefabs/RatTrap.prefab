@@ -283,8 +283,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4516957995379214189}
-  - component: {fileID: 4823040423834760176}
-  - component: {fileID: 4062203539518759555}
   m_Layer: 0
   m_Name: Cheese
   m_TagString: Cheese
@@ -309,36 +307,6 @@ Transform:
   m_Father: {fileID: 4750570903550594588}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 46.042, z: 0}
---- !u!135 &4823040423834760176
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4516957995379214184}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.3
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4062203539518759555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4516957995379214184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5be27845ae71fb7428edcb3277b45702, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateAngle: {x: 0, y: 30, z: 0}
-  bobAmplitude: 0.1
-  bobSpeed: 2
-  rat: {fileID: 0}
-  cheeseAmount: 1.5707965
 --- !u!1 &4516957995683068782
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +529,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.901886, b: 0, a: 0.2}
+      maxColor: {r: 1, g: 0.75, b: 0, a: 0.2}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5337,7 +5305,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.9019608, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.75, b: 0, a: 1}
   m_Intensity: 2
   m_Range: 3
   m_SpotAngle: 30

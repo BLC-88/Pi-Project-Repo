@@ -1665,6 +1665,7 @@ MonoBehaviour:
   rotateSpeed: 3
   forward: {x: 0, y: 0, z: 0}
   right: {x: 0, y: 0, z: 0}
+  canRotate: 0
 --- !u!4 &404928014
 Transform:
   m_ObjectHideFlags: 0
@@ -37517,7 +37518,7 @@ MonoBehaviour:
   - prefab: {fileID: 4298459401720789443, guid: d61687562e2045649980e6f881ae038c, type: 3}
     rarity: 10
   - prefab: {fileID: 423123406441154611, guid: 22bf5ef5235b8a54f8897909b2577672, type: 3}
-    rarity: 10
+    rarity: 10000
   - prefab: {fileID: 3359822906751558317, guid: c45898a6249527349b5b31a79e62cded, type: 3}
     rarity: 10
   - prefab: {fileID: 3359822906751558317, guid: 29b086a3196c7e04bab86be96d498750, type: 3}
@@ -39223,6 +39224,7 @@ GameObject:
   - component: {fileID: 4451066493688276376}
   - component: {fileID: 4451066493688276375}
   - component: {fileID: 4451066493688276374}
+  - component: {fileID: 4451066493688276377}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Player
@@ -39284,3 +39286,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.12
   m_Center: {x: 0, y: 0.115, z: 0}
+--- !u!114 &4451066493688276377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4451066493688276373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afea7baa284ad08468557802d46106ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floaterPoints: []
+  ignoreCustomGravity: 1
+  depthBeforeSubmerged: 0.1
+  displacementAmount: 3
+  waterDrag: 0.99
+  waterAngularDrag: 0.5

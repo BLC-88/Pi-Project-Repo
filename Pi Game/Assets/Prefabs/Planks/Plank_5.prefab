@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4249618705325040174}
   - component: {fileID: 2097933038122030820}
   - component: {fileID: 562565212416772128}
-  - component: {fileID: 3846357766784457013}
+  - component: {fileID: -7653792386332919079}
+  - component: {fileID: 8008020622797178026}
   m_Layer: 0
   m_Name: Plank_5
   m_TagString: Untagged
@@ -96,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.00059969723, y: 0.00060001505, z: 0.000606965}
   m_Center: {x: 0.000000032305305, y: 0.000000007086789, z: -0.0000042915635}
---- !u!114 &3846357766784457013
+--- !u!114 &-7653792386332919079
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,8 +106,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 440691457393588017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 840786fc0d2a38b40b8127f686936778, type: 3}
+  m_Script: {fileID: 11500000, guid: afea7baa284ad08468557802d46106ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowDownSpeedMultiplier: 0.01
-  slowDownDuration: 1.8
+  floaterPoints: []
+  depthBeforeSubmerged: 0.1
+  displacementAmount: 3
+  waterDrag: 0.99
+  waterAngularDrag: 0.5
+--- !u!54 &8008020622797178026
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440691457393588017}
+  serializedVersion: 2
+  m_Mass: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
