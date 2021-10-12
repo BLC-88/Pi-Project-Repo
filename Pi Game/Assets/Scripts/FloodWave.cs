@@ -38,10 +38,10 @@ public class FloodWave : MonoBehaviour {
         warningUI.color = tempCol;
         warningBar.fillAmount = a;
 
-        if (dist < maxDist - 0.1f) {
+        if (dist < maxDist - 0.25f) {
             slowDownTimer += Time.deltaTime;
         }
-        else if (dist > maxDist + 0.1f) {
+        else if (dist > maxDist + 0.25f) {
             speedUpTimer += Time.deltaTime;
         }
         else {
