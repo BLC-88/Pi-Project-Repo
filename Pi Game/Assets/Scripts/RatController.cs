@@ -28,9 +28,11 @@ public class RatController : MonoBehaviour {
 
     //CameraController cam;
     Rigidbody rb;
+    Floater floater;
 
     void Awake() {
         rb = GetComponent<Rigidbody>();
+        floater = GetComponent<Floater>();
         //cam = FindObjectOfType<CameraController>();
         moveSpeedOriginal = moveSpeed;
         canMove = true;
@@ -83,6 +85,8 @@ public class RatController : MonoBehaviour {
             //endRot = Quaternion.Euler(0, lookRot.eulerAngles.y, 0f);
             endRot = Quaternion.Euler(0, modelTurnAngle * hor, 0);
             model.transform.localRotation = Quaternion.Slerp(startRot, endRot, modelTurnspeed * Time.deltaTime);
+
+            animationScript.anim.SetBool("Swimming", floater.inWater);
         }
     }
 

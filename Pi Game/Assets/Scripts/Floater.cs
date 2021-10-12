@@ -12,6 +12,7 @@ public class Floater : MonoBehaviour {
     [SerializeField] float waterAngularDrag = 0.5f;
     Wave waveObject;
     float waveHeight;
+    [HideInInspector] public bool inWater;
 
     Rigidbody rb;
 
@@ -48,6 +49,7 @@ public class Floater : MonoBehaviour {
         Wave waveInstance = other.GetComponent<Wave>();
         if (waveInstance != null) {
             waveObject = waveInstance;
+            inWater = true;
         }
     }
 
@@ -55,6 +57,7 @@ public class Floater : MonoBehaviour {
         Wave waveInstance = other.GetComponent<Wave>();
         if (waveInstance != null) {
             waveObject = null;
+            inWater = false;
         }
     }
 }

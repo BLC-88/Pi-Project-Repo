@@ -50,5 +50,6 @@ public class PlayerScore : MonoBehaviour {
 
     public void AddCheese(float amount) {
         cheeseCount += amount;
+        if (cheeseCount < 0) cheeseCount = 0;
     }
 }
