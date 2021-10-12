@@ -66673,8 +66673,6 @@ MonoBehaviour:
     rarity: 1
   - prefab: {fileID: 6757413462161950590, guid: 14d53c340b81e4b4a8760755626580bf, type: 3}
     rarity: 1
-  - prefab: {fileID: 5379193228195058854, guid: 977446abfd169654c82c40fae7fadd9c, type: 3}
-    rarity: 3
 --- !u!1 &858569986043277739
 GameObject:
   m_ObjectHideFlags: 0

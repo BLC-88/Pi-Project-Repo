@@ -12668,6 +12668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840786fc0d2a38b40b8127f686936778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keepCollision: 0
   slowDownSpeedMultiplier: 0.01
   slowDownDuration: 1.8
 --- !u!1 &2254368028093748989
@@ -20588,6 +20589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840786fc0d2a38b40b8127f686936778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keepCollision: 0
   slowDownSpeedMultiplier: 0.01
   slowDownDuration: 1.8
 --- !u!1 &3179908059208939189
@@ -45306,8 +45308,6 @@ MonoBehaviour:
   - prefab: {fileID: 2359040120681750936, guid: 8e86e1ab01b93de42b25511d1d2557ae, type: 3}
     rarity: 1
   - prefab: {fileID: 6757413462161950590, guid: 14d53c340b81e4b4a8760755626580bf, type: 3}
-    rarity: 1
-  - prefab: {fileID: 5379193228195058854, guid: 977446abfd169654c82c40fae7fadd9c, type: 3}
     rarity: 1
 --- !u!1 &7480223844211755149
 GameObject:

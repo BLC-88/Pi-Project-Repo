@@ -9,6 +9,8 @@ public class FloodWave : MonoBehaviour {
     float originalMoveSpeed;
     [SerializeField] float timeBeforeSlowDown = 10f;
     float slowDownTimer;
+    [SerializeField] float timeBeforeSpeedUp = 2f;
+    float speedUpTimer;
     [SerializeField] Image warningUI;
     [SerializeField] Image warningBar;
     float maxDist;
@@ -19,32 +21,39 @@ public class FloodWave : MonoBehaviour {
 
     void Awake() {
         player = FindObjectOfType<RatController>();
-        originalMoveSpeed = moveSpeed;
     }
 
     void Start() {
-        maxDist = Vector3.Distance(transform.position, player.transform.position);
+        maxDist = Mathf.Abs(player.transform.position.z - transform.position.z);
+        originalMoveSpeed = moveSpeed;
     }
 
     void Update() {
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.World);
 
-        float dist = Vector3.Distance(transform.position, player.transform.position);
+        float dist = Mathf.Abs(player.transform.position.z - transform.position.z);
         tempCol = warningUI.color;
         float a = 1 - dist / maxDist;
         tempCol.a = a;
         warningUI.color = tempCol;
         warningBar.fillAmount = a;
 
-        if (dist < maxDist) {
+        if (dist < maxDist - 0.1f) {
             slowDownTimer += Time.deltaTime;
+        }
+        else if (dist > maxDist + 0.1f) {
+            speedUpTimer += Time.deltaTime;
         }
         else {
             slowDownTimer = 0f;
+            speedUpTimer = 0f;
             moveSpeed = originalMoveSpeed;
         }
         if (slowDownTimer >= timeBeforeSlowDown) {
-            moveSpeed *= 0.9f;
+            moveSpeed -= Time.deltaTime;
+        }
+        if (speedUpTimer >= timeBeforeSpeedUp) {
+            moveSpeed += Time.deltaTime;
         }
     }
 
