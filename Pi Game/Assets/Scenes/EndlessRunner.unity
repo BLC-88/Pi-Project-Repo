@@ -38134,7 +38134,7 @@ MonoBehaviour:
   - prefab: {fileID: 4298459401720789443, guid: d61687562e2045649980e6f881ae038c, type: 3}
     rarity: 10
   - prefab: {fileID: 423123406441154611, guid: 22bf5ef5235b8a54f8897909b2577672, type: 3}
-    rarity: 1000
+    rarity: 10
   - prefab: {fileID: 3359822906751558317, guid: c45898a6249527349b5b31a79e62cded, type: 3}
     rarity: 10
   - prefab: {fileID: 3359822906751558317, guid: 29b086a3196c7e04bab86be96d498750, type: 3}
