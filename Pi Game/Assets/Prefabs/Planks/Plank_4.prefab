@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1285421445247677618}
   - component: {fileID: 4626884081221346266}
   - component: {fileID: 5310349133116788075}
+  - component: {fileID: 650973784952257761}
   m_Layer: 0
   m_Name: plank broke.001
   m_TagString: Untagged
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &650973784952257761
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431185465792631655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 715693842733713334, guid: 9309598d0a80d914c96516b456ec7490, type: 3}
 --- !u!1 &2476863313705152193
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +107,7 @@ GameObject:
   - component: {fileID: 8269543179500664405}
   - component: {fileID: 2923772234596989973}
   - component: {fileID: 2042180470967060105}
+  - component: {fileID: 537092006340706351}
   m_Layer: 0
   m_Name: plank thin
   m_TagString: Untagged
@@ -162,6 +178,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &537092006340706351
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2476863313705152193}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1210330557463032045, guid: 9309598d0a80d914c96516b456ec7490, type: 3}
 --- !u!1 &2787444080143470202
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +203,7 @@ GameObject:
   - component: {fileID: 1763661139265366864}
   - component: {fileID: 1732746928729580287}
   - component: {fileID: 2477372299283041557}
+  - component: {fileID: 4984923210910097871}
   m_Layer: 0
   m_Name: plank.001
   m_TagString: Untagged
@@ -243,6 +274,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4984923210910097871
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2787444080143470202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8201013372771457532, guid: 9309598d0a80d914c96516b456ec7490, type: 3}
 --- !u!1 &4010640317877243184
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +461,7 @@ GameObject:
   - component: {fileID: 2745299350771806288}
   - component: {fileID: 3598910363551453480}
   - component: {fileID: 2586880998805305073}
+  - component: {fileID: 7252366930538959695}
   m_Layer: 0
   m_Name: plankb..002
   m_TagString: Untagged
@@ -486,6 +532,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7252366930538959695
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5223381749932426106}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2524494540142664434, guid: 9309598d0a80d914c96516b456ec7490, type: 3}
 --- !u!1 &6513177880298642521
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +677,7 @@ BoxCollider:
   m_GameObject: {fileID: 7994535716603861867}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.63648796, y: 0.2506435, z: 1.5979748}
   m_Center: {x: 0.48451233, y: -0.0576545, z: -0.23351574}
@@ -630,7 +690,7 @@ BoxCollider:
   m_GameObject: {fileID: 7994535716603861867}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1013947, y: 0.25807613, z: 1.0875082}
   m_Center: {x: -0.38805866, y: -0.047736973, z: 0.28300142}
@@ -647,10 +707,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floaterPoints: []
+  ignoreCustomGravity: 0
   depthBeforeSubmerged: 0.1
   displacementAmount: 3
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  inWater: 0
 --- !u!54 &-1186688061143623443
 Rigidbody:
   m_ObjectHideFlags: 0

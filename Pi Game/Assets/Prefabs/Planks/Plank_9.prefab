@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3496431211499252012}
   - component: {fileID: 3528550491023843459}
   - component: {fileID: 764905106540482409}
+  - component: {fileID: 7604061086657874980}
   m_Layer: 0
   m_Name: plank.001
   m_TagString: Untagged
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7604061086657874980
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032138228639288326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8201013372771457532, guid: df5a4451e2d668b47a5167f8d0c1e86f, type: 3}
 --- !u!1 &2229930377840648053
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +141,7 @@ BoxCollider:
   m_GameObject: {fileID: 2229930377840648053}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.43802643, y: 0.22871971, z: 2.1832047}
   m_Center: {x: 0.51560974, y: -0.05349207, z: -0.53581715}
@@ -143,10 +158,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floaterPoints: []
+  ignoreCustomGravity: 0
   depthBeforeSubmerged: 0.1
   displacementAmount: 3
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  inWater: 0
 --- !u!54 &-215297914301991084
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -174,6 +191,7 @@ GameObject:
   - component: {fileID: 5894516791853887884}
   - component: {fileID: 8071264128982436358}
   - component: {fileID: 2813884081808116800}
+  - component: {fileID: 137723249977075725}
   m_Layer: 0
   m_Name: plank broke
   m_TagString: Untagged
@@ -244,6 +262,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &137723249977075725
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4912969417012331110}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3304644283942871908, guid: df5a4451e2d668b47a5167f8d0c1e86f, type: 3}
 --- !u!1 &8375748268738856407
 GameObject:
   m_ObjectHideFlags: 0

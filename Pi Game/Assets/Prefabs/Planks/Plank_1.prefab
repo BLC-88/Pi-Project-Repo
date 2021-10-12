@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7269273125155128307}
   - component: {fileID: -2448561981028789197}
   - component: {fileID: 6825353925952096648}
+  - component: {fileID: 8691279693877866028}
   m_Layer: 0
   m_Name: Plank_1
   m_TagString: Untagged
@@ -99,7 +100,7 @@ BoxCollider:
   m_GameObject: {fileID: 5405042712427985570}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.0025459705, y: 0.0006357341, z: 0.0017663828}
   m_Center: {x: -0.0007791636, y: -0.0000058053524, z: -0.00037193138}
@@ -116,10 +117,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floaterPoints: []
+  ignoreCustomGravity: 0
   depthBeforeSubmerged: 0.1
   displacementAmount: 3
   waterDrag: 0.99
   waterAngularDrag: 0.5
+  inWater: 0
 --- !u!54 &6825353925952096648
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -136,3 +139,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &8691279693877866028
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5405042712427985570}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2524494540142664434, guid: c740b886c4096a7488e7dcbb03dde45c, type: 3}
